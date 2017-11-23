@@ -11,14 +11,23 @@ namespace WW4.GameWorld
 		private AudioClipUrlPair _audioClipUrlPair;
 		private AudioSource _audioSource;
 
-		public string ClipUrl
-		{
-			get { return _audioClipUrlPair != null ? string.Empty : _audioClipUrlPair.Url; }
-		}
+		public string ClipUrl => _audioClipUrlPair?.Url;
 
 		public void OnHit()
 		{
-			throw new NotImplementedException();
+			MessageSystem.OnBirdHit.Invoke(this);
+		}
+
+		public void Spawn()
+		{
+			gameObject.SetActive(true);
+			StartCoroutine(LoadAudioClipAndPlay());
+		}
+
+		public void Despawn()
+		{
+			_audioClipUrlPair = null;
+			gameObject.SetActive(false);
 		}
 
 		private void Awake()
@@ -28,16 +37,6 @@ namespace WW4.GameWorld
 			_audioSource.playOnAwake = false;
 			_audioSource.loop = true;
 			_audioSource.Stop();
-		}
-
-		private void OnEnable()
-		{
-			StartCoroutine(LoadAudioClipAndPlay());
-		}
-
-		private void OnDisable()
-		{
-			_audioClipUrlPair = null;
 		}
 
 		private IEnumerator LoadAudioClipAndPlay()

@@ -6,15 +6,12 @@ namespace WW4.GameWorld
 	[RequireComponent(typeof(SphereCollider))]
 	public class BirdSpawn : MonoBehaviour
 	{
-		private static BirdPool _birdPool;
-
 		private Bird _currentBird;
 		public int PlayerDetectionRange;
 
 		private void Start()
 		{
 			GetComponent<SphereCollider>().radius = PlayerDetectionRange;
-			if (_birdPool == null) _birdPool = new BirdPool(5, "BirdPool_SpawnPoints");
 		}
 
 		private void OnTriggerEnter(Collider other)
@@ -33,7 +30,7 @@ namespace WW4.GameWorld
 		{
 			if (_currentBird != null) return;
 
-			_currentBird = _birdPool.GetBird();
+			_currentBird = BirdPool.GetBird();
 			_currentBird.transform.SetParent(transform);
 			_currentBird.transform.position = transform.position;
 			_currentBird.gameObject.SetActive(true);
@@ -43,7 +40,7 @@ namespace WW4.GameWorld
 		{
 			if (_currentBird == null) return;
 
-			_birdPool.StoreBird(_currentBird);
+			BirdPool.StoreBird(_currentBird);
 			_currentBird = null;
 		}
 	}

@@ -7,8 +7,6 @@ namespace WW4.GameWorld
     [RequireComponent(typeof(SphereCollider))]
     public class BirdHouse : MonoBehaviour, IInteractable
     {
-        private static BirdPool _birdPool;
-
 	    public Transform SpawnPoint;
 
         private Bird _currentBird;
@@ -26,11 +24,6 @@ namespace WW4.GameWorld
 				StoreBird();
         }
 
-		private void Start()
-        {
-            if (_birdPool == null) _birdPool = new BirdPool(2,"BirdPool_BirdHouses");
-        }
-
         private void OnTriggerExit(Collider other)
         {
 			if(other.CompareTag("Player"))
@@ -41,7 +34,7 @@ namespace WW4.GameWorld
         {
 	        if (_currentBird != null) return;
 
-            _currentBird = _birdPool.GetBird();
+            _currentBird = BirdPool.GetBird();
             _currentBird.transform.SetParent(transform);
             _currentBird.transform.position = SpawnPoint.position;
             _currentBird.gameObject.SetActive(true);
@@ -51,7 +44,7 @@ namespace WW4.GameWorld
         {
             if (_currentBird == null) return;
 
-            _birdPool.StoreBird(_currentBird);
+            BirdPool.StoreBird(_currentBird);
             _currentBird = null;
         }
     }
