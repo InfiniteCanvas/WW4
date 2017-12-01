@@ -11,12 +11,7 @@ namespace WW4.GameWorld
 
         private Bird _currentBird;
 
-        public void Interact(object actor)
-        {
-            Interact();
-        }
-
-        public void Interact()
+        public void Interact(GameObject heldObject)
         {
 			if(_currentBird==null)
 				SpawnBird();

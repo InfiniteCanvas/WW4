@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using WW4.Utility;
 
@@ -11,7 +10,10 @@ namespace WW4.GameWorld
 		private AudioClipUrlPair _audioClipUrlPair;
 		private AudioSource _audioSource;
 
-		public string ClipUrl => _audioClipUrlPair?.Url;
+		public string ClipUrl
+		{
+			get { return _audioClipUrlPair != null ? _audioClipUrlPair.Url : null; }
+		}
 
 		public void OnHit()
 		{

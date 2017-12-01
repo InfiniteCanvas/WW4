@@ -1,20 +1,23 @@
 ﻿using UnityEngine;
 using WW4.Utility;
 
-public class Grab : MonoBehaviour
+public class GrabAndInteract : MonoBehaviour
 {
 	private GameObject _collidingObject;
 	private InputManager _controller;
-	private GameObject _objectInHand;
+	private GameObject _heldObject;
+	private LayerMask _interactableMask;
+	private const float MaxInteractionDistance = 2f;
 
 	private void Start()
 	{
+		_interactableMask = 1 << LayerMask.NameToLayer("Interactable");
 		_controller = GetComponent<InputManager>();
 	}
 
 	private void SetCollidingObject(Collider col)
 	{
-		if (_collidingObject || !col.GetComponent<Rigidbody>())
+		if (_collidingObject || col.GetComponent<IGrabbable>()==null)
 			return;
 		_collidingObject = col.gameObject;
 	}
@@ -39,10 +42,10 @@ public class Grab : MonoBehaviour
 
 	private void GrabObject()
 	{
-		_objectInHand = _collidingObject;
+		_heldObject = _collidingObject;
 		_collidingObject = null;
 		FixedJoint joint = AddFixedJoint();
-		joint.connectedBody = _objectInHand.GetComponent<Rigidbody>();
+		joint.connectedBody = _heldObject.GetComponent<Rigidbody>();
 	}
 
 	private FixedJoint AddFixedJoint()
@@ -59,10 +62,10 @@ public class Grab : MonoBehaviour
 		{
 			GetComponent<FixedJoint>().connectedBody = null;
 			Destroy(GetComponent<FixedJoint>());
-			_objectInHand.GetComponent<Rigidbody>().velocity = _controller.GetVelocity();
-			_objectInHand.GetComponent<Rigidbody>().angularVelocity = _controller.GetAngularVelocity();
+			_heldObject.GetComponent<Rigidbody>().velocity = _controller.GetVelocity();
+			_heldObject.GetComponent<Rigidbody>().angularVelocity = _controller.GetAngularVelocity();
 		}
-		_objectInHand = null;
+		_heldObject = null;
 	}
 
 	private void Update()
@@ -72,7 +75,21 @@ public class Grab : MonoBehaviour
 				GrabObject();
 
 		if (_controller.GetButtonUp(PlayerButtons.Grab))
-			if (_objectInHand)
+			if (_heldObject)
 				ReleaseObject();
+
+		if (_controller.GetButtonDown(PlayerButtons.Interact))
+			Interact();
+	}
+
+	private void Interact()
+	{
+		RaycastHit hit;
+		Ray ray = new Ray(transform.position, transform.forward);
+
+		if (Physics.Raycast(ray, out hit, MaxInteractionDistance, _interactableMask))
+		{
+			hit.transform.GetComponent<IInteractable>().Interact(_heldObject);
+		}
 	}
 }

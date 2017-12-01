@@ -2,42 +2,39 @@
 
 using System.Collections;
 using UnityEngine;
-using WW4.Utility;
 
 public class TeleportLaser : MonoBehaviour
 {
-	private InputManager _controller;
-	private Vector3 _teleportPoint;
-	private bool _canTeleport;
 	private bool _firingLaser;
 	private Transform _laserTransform;
+
+	public bool CanTeleport { get; private set; }
+	public Vector3 TeleportPoint { get; private set; }
 
 	public Transform CameraHead;
 	public Transform CameraRig;
 	public LineRenderer LaserRenderer;
 	public LayerMask TeleportMask;
+	public GameObject Reticule;
 
 	private void Start()
 	{
 		LaserRenderer.enabled = false;
 		_laserTransform = LaserRenderer.transform;
-		_controller = GetComponent<InputManager>();
 	}
 
-	private void Update()
+	public void TurnOnLaser()
 	{
-		if (_controller.GetButtonDown(PlayerButtons.Teleport))
-			if (!_firingLaser)
-			{
-				_firingLaser = true;
-				StartCoroutine(FireLaser());
-			}
-
-		if (_controller.GetButtonUp(PlayerButtons.Teleport))
+		if (!_firingLaser)
 		{
-			_firingLaser = false;
-			TryTeleport();
+			_firingLaser = true;
+			StartCoroutine(FireLaser());
 		}
+	}
+
+	public void TurnOffLaser()
+	{
+		_firingLaser = false;
 	}
 
 	private IEnumerator FireLaser()
@@ -52,13 +49,16 @@ public class TeleportLaser : MonoBehaviour
 			if (Physics.Raycast(ray, out hit, 100, TeleportMask))
 			{
 				LaserRenderer.SetPosition(1, hit.point);
-				_teleportPoint = hit.point;
-				_canTeleport = true;
+				
+				TeleportPoint = hit.point;
+				CanTeleport = true;
+				ShowReticule();
 			}
 			else
 			{
 				LaserRenderer.SetPosition(1, ray.GetPoint(100));
-				_canTeleport = false;
+				CanTeleport = false;
+				HideReticule();
 			}
 
 			yield return null;
@@ -66,14 +66,15 @@ public class TeleportLaser : MonoBehaviour
 		LaserRenderer.enabled = false;
 	}
 
-	private void TryTeleport()
+	private void ShowReticule()
 	{
-		if (!_canTeleport) return;
+		Reticule.SetActive(true);
+		Reticule.transform.position = TeleportPoint;
+	}
 
-		Vector3 offset = CameraRig.position - CameraHead.position;
-		offset.y = 0;
-
-		CameraRig.position = _teleportPoint + offset;
+	private void HideReticule()
+	{
+		Reticule.SetActive(false);
 	}
 
 #if TESTING_LASER

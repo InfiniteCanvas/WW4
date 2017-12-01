@@ -1,4 +1,9 @@
-﻿public interface IInteractable
+﻿using UnityEngine;
+
+namespace WW4.Utility
 {
-    void Interact();
+	public interface IInteractable
+	{
+		void Interact(GameObject heldObject);
+	}
 }

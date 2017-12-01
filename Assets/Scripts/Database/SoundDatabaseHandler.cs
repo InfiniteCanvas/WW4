@@ -5,6 +5,6 @@ namespace WW4.Database
     public interface SoundDatabaseHandler
     {
         string GetAudioClipUrl();
-        void IdentifyAudioclip(WWW clipUrl, string name);
+        bool IdentifyAudioclip(string clipUrl, string name);
     }
 }

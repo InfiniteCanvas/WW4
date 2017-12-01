@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
+using WW4.Book;
 using WW4.GameWorld;
+using WW4.TestScripts;
 using WW4.Utility;
 
 public class TestMenu : MonoBehaviour
@@ -8,14 +10,16 @@ public class TestMenu : MonoBehaviour
 	private bool _moving, _inRange;
 	private GameObject _player;
 
+	public SoundDatabase SoundDatabase;
 	public BirdHouse Birdhouse;
 	public BirdSpawn BirdSpawn;
 	public TeleportLaser TeleportLaser;
+	public IdentificationPage IdentificationPage;
 
 	private void OnGUI()
 	{
 		if (GUI.Button(new Rect(0, 0, 200, 100), "Interact with BirdHouse"))
-			Birdhouse.Interact();
+			Birdhouse.Interact(null);
 		if (GUI.Button(new Rect(0, Screen.height-100, 200, 100), "Instantiate Bird\nfrom PrefabCatalogue"))
 			Instantiate(PrefabCatalogue.GetPrefab("Bird"));
 		if (GUI.Button(new Rect(200, 0, 200, 100), "Move Player in/out of\nBirdSpawn range"))
@@ -25,6 +29,10 @@ public class TestMenu : MonoBehaviour
 			if (!TeleportLaser.gameObject.activeSelf) TeleportLaser.gameObject.SetActive(true);
 			TeleportLaser.ToggleLaser();
 		}
+		if (GUI.Button(new Rect(200, Screen.height - 100, 200, 100), "Interact with page\nwith random bird"))
+			IdentificationPage.Interact(BirdPool.GetBird().gameObject);
+		if (GUI.Button(new Rect(400, Screen.height - 100, 200, 100), "Print all identified birds"))
+			SoundDatabase.PrintAllIdentifiedBirds();
 	}
 
 	private void TestSpawnPoint()

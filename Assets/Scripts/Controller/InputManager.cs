@@ -67,7 +67,7 @@ namespace WW4.Utility
 
 		#endregion
 
-		#region IPlayerControls-Implementation
+		#region Implementation
 
 		public bool GetButtonUp(PlayerButtons playerButton)
 		{

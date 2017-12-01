@@ -108,6 +108,48 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &25036471
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007121341463946, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a05480c4bd563fa43ab563c28fa85eac, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &161290522
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,11 +261,11 @@ Prefab:
     - target: {fileID: 3380982, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 2002503886}
+      objectReference: {fileID: 1868129582}
     - target: {fileID: 2348914, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1441819640}
+      objectReference: {fileID: 1211321444}
     - target: {fileID: 114642248391062202, guid: 4d293c8e162f3874b982baadd71153d2,
         type: 2}
       propertyPath: Controller
@@ -443,6 +485,39 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1211321444
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1369672090
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,39 +607,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1441819640
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1782363190
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,9 +730,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1798844750}
-  - component: {fileID: 1798844749}
   - component: {fileID: 1798844748}
-  - component: {fileID: 1798844751}
+  - component: {fileID: 1798844752}
   m_Layer: 0
   m_Name: TestScripts
   m_TagString: Untagged
@@ -709,23 +750,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85869cb20cc37f140a6fa22028f15a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundDatabase: {fileID: 1951097742}
   Birdhouse: {fileID: 1194034046}
   BirdSpawn: {fileID: 578040622}
   TeleportLaser: {fileID: 2065081851}
---- !u!114 &1798844749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1798844747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 999419c8e23616344a3f93b3dd548849, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Url:
-  - https://upload.wikimedia.org/wikipedia/commons/6/68/Turdus_merula_male_song_at_dawn%2820s%29.ogg
-  - https://upload.wikimedia.org/wikipedia/en/6/63/Australianraven.ogg
+  IdentificationPage: {fileID: 1798844752}
 --- !u!4 &1798844750
 Transform:
   m_ObjectHideFlags: 0
@@ -739,7 +768,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1798844751
+--- !u!114 &1798844752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -747,11 +776,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1798844747}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90e28fbc4afb72e448ecca7f983d036a, type: 3}
+  m_Script: {fileID: 11500000, guid: 8bd5be12f43dd3e408351e61191dee9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RefillThreshold: 5
---- !u!43 &2002503886
+  BirdName: Some raven
+--- !u!43 &1868129582
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -879,6 +908,12 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
+--- !u!114 &1951097742 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114956533292722410, guid: a05480c4bd563fa43ab563c28fa85eac,
+    type: 2}
+  m_PrefabInternal: {fileID: 25036471}
+  m_Script: {fileID: 11500000, guid: 999419c8e23616344a3f93b3dd548849, type: 3}
 --- !u!1 &2065081850 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 159396, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}
@@ -900,6 +935,7 @@ MonoBehaviour:
   TeleportMask:
     serializedVersion: 2
     m_Bits: 0
+  Reticule: {fileID: 0}
 --- !u!4 &2065081856 stripped
 Transform:
   m_PrefabParentObject: {fileID: 402434, guid: 4d293c8e162f3874b982baadd71153d2, type: 2}

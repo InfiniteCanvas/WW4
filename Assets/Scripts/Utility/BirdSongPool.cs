@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using WW4.Database;
 using WW4.TestScripts;
+using System.IO;
 
 namespace WW4.Utility
 {
@@ -23,8 +24,7 @@ namespace WW4.Utility
 				Instance = this;
 				_soundDatabase = SoundDatabase.SoundDatabaseHandler;
 				_birdSongs = new Queue<AudioClipUrlPair>();		
-			RefillIfBelowThreshold();
-
+				RefillIfBelowThreshold();
 			}
 			else
 			{
@@ -38,10 +38,8 @@ namespace WW4.Utility
 			AudioClipUrlPair birdsong = new AudioClipUrlPair {Url = _soundDatabase.GetAudioClipUrl()};
 			WWW download = new WWW(birdsong.Url);
 
-			print("Downloading "+birdsong.Url);
 
-			while (!download.isDone)
-				yield return null;
+			yield return download;
 			birdsong.AudioClip = download.GetAudioClip();
 
 			_birdSongs.Enqueue(birdsong);
@@ -63,6 +61,16 @@ namespace WW4.Utility
 			Instance.RefillIfBelowThreshold();
 
 			return Instance._birdSongs.Count < 1 ? null : Instance._birdSongs.Dequeue();
+		}
+
+		private AudioClipUrlPair GetAudioclipFromStreamingAssets()
+		{
+			var files = Directory.GetFiles(Application.streamingAssetsPath);
+			var url = "file://" + files[Random.Range(0, files.Length)];
+			print(url);
+			var clip = new WWW(url).GetAudioClip(false, false, AudioType.OGGVORBIS);
+
+			return new AudioClipUrlPair{AudioClip = clip, Url = url};
 		}
 	}
 

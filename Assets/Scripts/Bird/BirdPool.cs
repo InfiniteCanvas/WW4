@@ -36,10 +36,8 @@ namespace WW4.Utility
 
 		private static Bird CreateBird()
 		{
-			GameObject birdClone = GameObject.Instantiate(_birdPrefab);
+			GameObject birdClone = Object.Instantiate(_birdPrefab);
 			birdClone.transform.SetParent(_birdPoolParentObject.transform);
-
-			birdClone.SetActive(true);
 
 			return birdClone.GetComponent<Bird>();
 		}
