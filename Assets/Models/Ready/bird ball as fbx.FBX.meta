@@ -22,6 +22,9 @@ ModelImporter:
     4300000: the table
     4300002: the glass
     4300004: Sphere001
+    6400000: Sphere001
+    6400002: the glass
+    6400004: the table
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -51,14 +54,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
-    addColliders: 0
+    meshCompression: 1
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

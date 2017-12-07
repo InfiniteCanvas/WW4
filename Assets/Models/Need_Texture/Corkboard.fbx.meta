@@ -36,6 +36,11 @@ ModelImporter:
     4300004: pasted__pCube18
     4300006: pCube19
     4300008: pasted__pCube19
+    6400000: pasted__pCube18
+    6400002: pasted__pCube19
+    6400004: pCube17
+    6400006: pCube18
+    6400008: pCube19
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -65,14 +70,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
-    addColliders: 0
+    meshCompression: 1
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -85,9 +90,9 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

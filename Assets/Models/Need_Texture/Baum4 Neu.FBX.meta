@@ -6,10 +6,20 @@ ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Foliage005_MeshPart0
+    100004: Foliage005_MeshPart1
     400000: //RootNode
+    400002: Foliage005_MeshPart0
+    400004: Foliage005_MeshPart1
     2300000: //RootNode
+    2300002: Foliage005_MeshPart0
+    2300004: Foliage005_MeshPart1
     3300000: //RootNode
+    3300002: Foliage005_MeshPart0
+    3300004: Foliage005_MeshPart1
     4300000: Foliage005
+    4300002: Foliage005_MeshPart0
+    4300004: Foliage005_MeshPart1
   materials:
     importMaterials: 1
     materialName: 0
@@ -45,7 +55,7 @@ ModelImporter:
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -58,7 +68,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
   importAnimation: 0
   copyAvatar: 0
