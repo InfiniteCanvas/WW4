@@ -5,26 +5,27 @@ OcclusionCullingSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_OcclusionBakeSettings:
-    smallestOccluder: 5
-    smallestHole: 0.25
+    smallestOccluder: 10
+    smallestHole: 0.5
     backfaceThreshold: 100
-  m_SceneGUID: 00000000000000000000000000000000
-  m_OcclusionCullingData: {fileID: 0}
+  m_SceneGUID: 156156cdbd572b249a2ccee6c7ea3e0b
+  m_OcclusionCullingData: {fileID: 36300000, guid: 1d0a36fea2c6c7e47a3fd64de1f9e94d,
+    type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.6691177, g: 0.6691177, b: 0.6691177, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.002
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
-  m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
-  m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
+  m_AmbientSkyColor: {r: 0.37208045, g: 0.47157297, b: 0.6838235, a: 1}
+  m_AmbientEquatorColor: {r: 0.48918685, g: 0.53801674, b: 0.5735294, a: 1}
+  m_AmbientGroundColor: {r: 0.45937237, g: 0.58823526, b: 0.35467127, a: 1}
   m_AmbientIntensity: 2
-  m_AmbientMode: 0
+  m_AmbientMode: 1
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: beba17ff4df095b4184242b165640ded, type: 2}
   m_HaloStrength: 0.5
@@ -33,12 +34,12 @@ RenderSettings:
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
   m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 512
+  m_DefaultReflectionResolution: 128
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 685260049}
-  m_IndirectSpecularColor: {r: 0.23142287, g: 0.23721547, b: 0.18983589, a: 1}
+  m_IndirectSpecularColor: {r: 0.23142344, g: 0.23721589, b: 0.18983573, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -52,17 +53,17 @@ LightmapSettings:
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
-    m_EnableRealtimeLightmaps: 0
+    m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 9
     m_Resolution: 2
     m_BakeResolution: 40
-    m_TextureWidth: 512
+    m_TextureWidth: 128
     m_TextureHeight: 1024
     m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
-    m_CompAOExponentDirect: 0
+    m_CompAOExponentDirect: 1
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 0
@@ -71,7 +72,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 0
+    m_MixedBakeMode: 1
     m_BakeBackend: 0
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -225,7 +226,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4084873340656158, guid: 979bb353e2ccce64dab09496ef30716b, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 198513117132626540, guid: 979bb353e2ccce64dab09496ef30716b,
         type: 2}
@@ -406,7 +407,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -668,7 +669,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 40b751a27e7d252489d2649dddcb672a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1500000, guid: 40b751a27e7d252489d2649dddcb672a, type: 2}
       propertyPath: worldVelocity.z
@@ -1482,26 +1483,26 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 39c3ac239472730449a61d2d505fc985, type: 2}
-  m_TreeDistance: 2000
-  m_TreeBillboardDistance: 60
-  m_TreeCrossFadeLength: 10
+  m_TreeDistance: 800
+  m_TreeBillboardDistance: 70
+  m_TreeCrossFadeLength: 20
   m_TreeMaximumFullLODCount: 40
   m_DetailObjectDistance: 60
-  m_DetailObjectDensity: 0.75
+  m_DetailObjectDensity: 0.5
   m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
+  m_SplatMapDistance: 800
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialType: 0
+  m_MaterialType: 1
   m_LegacySpecular:
     serializedVersion: 2
     rgba: 4286545791
   m_LegacyShininess: 0.078125
   m_MaterialTemplate: {fileID: 0}
-  m_BakeLightProbesForTrees: 1
+  m_BakeLightProbesForTrees: 0
   m_ScaleInLightmap: 0.0256
   m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!4 &967474452
@@ -1514,7 +1515,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1637876734}
+  m_Father: {fileID: 1710232028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1068767460
@@ -1792,7 +1793,7 @@ Transform:
   m_Children:
   - {fileID: 909354930}
   m_Father: {fileID: 1710232028}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1562974821
 Prefab:
@@ -1837,6 +1838,21 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 20769459629282450, guid: c39fcf8767d453343ac485724b84f45b,
+        type: 2}
+      propertyPath: m_RenderingPath
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20769459629282450, guid: c39fcf8767d453343ac485724b84f45b,
+        type: 2}
+      propertyPath: m_HDR
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20769459629282450, guid: c39fcf8767d453343ac485724b84f45b,
+        type: 2}
+      propertyPath: near clip plane
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c39fcf8767d453343ac485724b84f45b, type: 2}
   m_IsPrefabParent: 0
@@ -1865,13 +1881,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 967474452}
   - {fileID: 428925616}
   - {fileID: 750578530}
   - {fileID: 204870862}
   - {fileID: 204439034}
   m_Father: {fileID: 1710232028}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1710232027
 GameObject:
@@ -1898,6 +1913,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 967474452}
   - {fileID: 1921196605}
   - {fileID: 1637876734}
   - {fileID: 320913625}
@@ -1937,7 +1953,7 @@ Transform:
   - {fileID: 570753519}
   - {fileID: 1946618421}
   m_Father: {fileID: 1710232028}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1926261744
 GameObject:
@@ -1948,6 +1964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1926261746}
   - component: {fileID: 1926261745}
+  - component: {fileID: 1926261747}
   m_Layer: 0
   m_Name: RiverAndSeaReflectionSceneCamera
   m_TagString: Untagged
@@ -1997,13 +2014,21 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1926261744}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 721.1, y: 1.539999, z: 490.8}
+  m_LocalRotation: {x: 0.023498427, y: -0.96373075, z: 0.09046361, w: 0.24997444}
+  m_LocalPosition: {x: 746.9041, y: -2.059372, z: 527.6772}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!45 &1926261747
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926261744}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 0}
 --- !u!1 &1946618420
 GameObject:
   m_ObjectHideFlags: 0
