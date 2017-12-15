@@ -20,8 +20,12 @@ namespace WW4.TestScripts
 
 		public string GetAudioClipUrl()
 		{
-			var url = Urls[Random.Range(0, Urls.Length)];
-			return url;
+			return Urls[Random.Range(0, Urls.Length)];
+		}
+
+		private void GetAllFilePaths()
+		{
+			Urls = Directory.GetFiles(Application.streamingAssetsPath, "*.ogg");
 		}
 
 		public bool IdentifyAudioclip(string clipUrl, string name)
@@ -36,11 +40,6 @@ namespace WW4.TestScripts
 
 			//already exists
 			return false;
-		}
-
-		private void GetAllFilePaths()
-		{
-			Urls = Directory.GetFiles(Application.streamingAssetsPath, "*.*").Where(x => !x.EndsWith(".meta")).ToArray();
 		}
 
 		private void Awake()

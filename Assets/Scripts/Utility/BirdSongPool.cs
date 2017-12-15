@@ -32,17 +32,17 @@ namespace WW4.Utility
 			}
 		}
 
-		private IEnumerator DownloadAudioclips()
+		private IEnumerator DownloadAudioclip()
 		{
 			_downloadsInProgress++;
-			AudioClipUrlPair birdsong = new AudioClipUrlPair {Url = _soundDatabase.GetAudioClipUrl()};
-			WWW download = new WWW(birdsong.Url);
+			string url = _soundDatabase.GetAudioClipUrl();			
 
-
+			WWW download = new WWW(url);
 			yield return download;
-			birdsong.AudioClip = download.GetAudioClip();
 
-			_birdSongs.Enqueue(birdsong);
+			AudioClip clip = download.GetAudioClip();
+
+			_birdSongs.Enqueue(new AudioClipUrlPair(url, clip));
 
 			download.Dispose();
 			_downloadsInProgress--;
@@ -52,7 +52,7 @@ namespace WW4.Utility
 		{
 			if (_downloadsInProgress >= RefillThreshold - _birdSongs.Count) return;
 			for (int i = 0; i < RefillThreshold - _birdSongs.Count; i++)
-				StartCoroutine(DownloadAudioclips());
+				StartCoroutine(DownloadAudioclip());
 		}
 
 		//kind of hacky, but I wanted it static
@@ -70,13 +70,19 @@ namespace WW4.Utility
 			print(url);
 			var clip = new WWW(url).GetAudioClip(false, false, AudioType.OGGVORBIS);
 
-			return new AudioClipUrlPair{AudioClip = clip, Url = url};
+			return new AudioClipUrlPair(url, clip);
 		}
 	}
 
 	public class AudioClipUrlPair
 	{
-		public AudioClip AudioClip;
-		public string Url;
+		public AudioClip AudioClip { get; private set; }
+		public string Url { get; private set; }
+
+		public AudioClipUrlPair(string url, AudioClip clip)
+		{
+			AudioClip = clip;
+			Url = url;
+		}
 	}
 }
