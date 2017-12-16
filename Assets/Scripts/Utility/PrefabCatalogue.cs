@@ -4,23 +4,36 @@ using UnityEngine;
 
 namespace WW4.Utility
 {
-	[CreateAssetMenu(fileName = "PrefabCatalogue", menuName = "PrefabCatalogue")]
-	public class PrefabCatalogue : ScriptableObject
+	public class PrefabCatalogue : MonoBehaviour, InitializerControlled
 	{
 		[SerializeField] private StringGameObjectPair[] _dictionary;
 		public static PrefabCatalogue Instance { get; private set; }
 
-		private void OnEnable()
+		//it's hacky, but I want it as static
+		public GameObject GetPrefab(string prefabName)
 		{
-			Debug.Assert(Instance == null, "There should be only one PrefabCatalogue.");
-			Instance = this;
+		    return _dictionary.FirstOrDefault(x => x.Name == prefabName)?.Prefab;
 		}
 
-		//it's hacky, but I want it as static
-		public static GameObject GetPrefab(string name)
-		{
-		    return Instance._dictionary.FirstOrDefault(x => x.Name == name)?.Prefab;
-		}
+	    public GameObject this[string prefabName] => GetPrefab(prefabName);
+
+	    public bool Initialize()
+	    {
+	        if (Instance == null)
+	        {
+	            Instance = this;
+	            return true;	            
+	        }
+	        else
+	        {
+	            return false;
+	        }
+	    }
+
+	    public string GetClassName()
+	    {
+	        return typeof(PrefabCatalogue).FullName;
+	    }
 	}
 
 	[Serializable]

@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace WW4.TestScripts
 {
-	public class SoundDatabase : MonoBehaviour, SoundDatabaseHandler
+	public class SoundDatabase : MonoBehaviour, SoundDatabaseHandler, InitializerControlled
 	{
 		private string[] Urls;
 
@@ -40,14 +40,6 @@ namespace WW4.TestScripts
 
 			//already exists
 			return false;
-		}
-
-		private void Awake()
-		{
-			SoundDatabaseHandler = this;
-			GetAllFilePaths();
-			DeserializeDatabase();
-			PrintAllIdentifiedBirds();
 		}
 
 		private void OnApplicationQuit()
@@ -80,5 +72,24 @@ namespace WW4.TestScripts
 			}
 		}
 #endif
+	    public bool Initialize()
+	    {
+	        if (SoundDatabaseHandler == null)
+	        {
+	            SoundDatabaseHandler = this;
+	            GetAllFilePaths();
+	            DeserializeDatabase();
+
+	            return true;
+	        }
+	        else
+	        {
+	            return false;
+	        }
+	    }
+	    public string GetClassName()
+	    {
+	        return typeof(SoundDatabase).FullName;
+	    }
 	}
 }

@@ -10,6 +10,19 @@ namespace WW4.GameWorld
 
         private Bird _currentBird;
 
+        private void Start()
+        {
+            MessageSystem.ReturningToPoolHandler.AddListener(OnReturningToPool);
+        }
+
+        private void OnReturningToPool(GameObject go)
+        {
+            if (_currentBird == null) return;
+
+            if (go == _currentBird.gameObject)
+                _currentBird = null;
+        }
+
         public void Interact(GameObject heldObject)
         {
 			if(_currentBird==null)

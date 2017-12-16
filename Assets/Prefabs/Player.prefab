@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4923197058938136}
   - component: {fileID: 54490002122844622}
   - component: {fileID: 136094803187999604}
-  - component: {fileID: 114355134875029202}
+  - component: {fileID: 114402685180176244}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -189,7 +189,7 @@ MonoBehaviour:
   jumpAndLandingBob:
     BobDuration: 0.15
     BobAmount: 0.2
-  rigidbodyFirstPersonController: {fileID: 114355134875029202}
+  rigidbodyFirstPersonController: {fileID: 114402685180176244}
   StrideInterval: 4
   RunningStrideLengthen: 0.722
 --- !u!114 &114141554910817922
@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profile: {fileID: 11400000, guid: ed5c569fdf482624e87fb23b103f394a, type: 2}
---- !u!114 &114355134875029202
+--- !u!114 &114402685180176244
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1239181721789084}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 25a8ff37a07fee245944884c26880dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 20746222067559928}
@@ -263,6 +263,9 @@ MonoBehaviour:
     slowDownRate: 20
     airControl: 0
     shellOffset: 0
+  Mask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!124 &124454913215278950
 Behaviour:
   m_ObjectHideFlags: 1

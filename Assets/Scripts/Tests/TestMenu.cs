@@ -21,7 +21,7 @@ public class TestMenu : MonoBehaviour
 		if (GUI.Button(new Rect(0, 0, 200, 100), "Interact with BirdHouse"))
 			Birdhouse.Interact(null);
 		if (GUI.Button(new Rect(0, Screen.height-100, 200, 100), "Instantiate Bird\nfrom PrefabCatalogue"))
-			Instantiate(PrefabCatalogue.GetPrefab("Bird"));
+			Instantiate(PrefabCatalogue.Instance["Bird"]);
 		if (GUI.Button(new Rect(200, 0, 200, 100), "Move Player in/out of\nBirdSpawn range"))
 			TestSpawnPoint();
 		if (GUI.Button(new Rect(Screen.width - 200, Screen.height - 100, 200, 100), "Toggle Laser"))

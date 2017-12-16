@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 //Assuming only one component on gameObject implements IPoolable
@@ -16,7 +17,14 @@ namespace WW4.Utility
         public static GameObject SpawnClone(GameObject prefab)
         {
             if (!Pools.ContainsKey(prefab))
-                Pools.Add(prefab, new Pool(prefab));
+            {
+                if(prefab.GetComponent<IPoolable>()!=null)
+                    Pools.Add(prefab, new Pool(prefab));
+                else
+                {
+                    throw new ArgumentException($"The used prefab does not implement the {nameof(IPoolable)} interface!");
+                }
+            }                
 
             GameObject clone = Pools[prefab].GetClone();
             ActiveObjects.Add(clone, Pools[prefab]);
@@ -25,11 +33,17 @@ namespace WW4.Utility
             return clone;
         }
 
+        public static T SpawnClone<T>(GameObject prefab) where T : MonoBehaviour
+        {
+            return SpawnClone(prefab).GetComponent<T>();
+        }
+
         public static void DespawnClone(GameObject clone)
         {
             if (ActiveObjects.ContainsKey(clone))
             {
                 clone.GetComponent<IPoolable>().Despawn();
+                MessageSystem.ReturningToPoolHandler.Invoke(clone);
                 ActiveObjects[clone].ReturnClone(clone);
                 ActiveObjects.Remove(clone);
             }

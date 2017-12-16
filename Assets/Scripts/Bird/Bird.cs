@@ -4,7 +4,7 @@ using WW4.Utility;
 
 namespace WW4.GameWorld
 {
-	[RequireComponent(typeof(AudioSource))]
+	[RequireComponent(typeof(AudioSource)), RequireComponent(typeof(Collider))]
 	public class Bird : MonoBehaviour, IHitable, IPoolable
 	{
 		private AudioClipUrlPair _audioClipUrlPair;
@@ -15,7 +15,8 @@ namespace WW4.GameWorld
 
 	    public void OnHit()
 		{
-			MessageSystem.OnBirdHit.Invoke(this);
+			MessageSystem.BirdHitHandler.Invoke(this);
+            PrefabPool.DespawnClone(gameObject);
 		}
 
 		public void Spawn()
