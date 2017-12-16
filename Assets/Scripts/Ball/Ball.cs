@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour, IGrabbable, IPoolable
 		else
 		{
             if(_delayedDespawn==null)
-                _delayedDespawn = StartCoroutine(DelayedDespawn(2f));
+                _delayedDespawn = StartCoroutine(DelayedDespawn(1f));
         }
 	}
 
@@ -44,6 +44,4 @@ public class Ball : MonoBehaviour, IGrabbable, IPoolable
         StopCoroutine(_delayedDespawn);
         gameObject.SetActive(false);
     }
-
-
 }

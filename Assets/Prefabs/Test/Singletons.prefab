@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4007121341463946}
   - component: {fileID: 114950801998478300}
+  - component: {fileID: 114396588281906034}
   - component: {fileID: 114956533292722410}
   - component: {fileID: 114633786002885052}
-  - component: {fileID: 114396588281906034}
+  - component: {fileID: 114904564513868952}
   m_Layer: 0
   m_Name: Singletons
   m_TagString: Untagged
@@ -71,6 +72,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RefillThreshold: 5
+--- !u!114 &114904564513868952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521595932289290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb3e10a94a6eb7b439c83c7288f1b3b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114950801998478300
 MonoBehaviour:
   m_ObjectHideFlags: 1
