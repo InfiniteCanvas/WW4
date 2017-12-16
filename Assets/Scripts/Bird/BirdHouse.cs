@@ -4,7 +4,7 @@ using WW4.Utility;
 namespace WW4.GameWorld
 {
     [RequireComponent(typeof(SphereCollider))]
-    public class BirdHouse : MonoBehaviour, IInteractable
+    public class BirdHouse : MonoBehaviour, Interactable
     {
 	    public Transform SpawnPoint;
 

@@ -89,7 +89,7 @@ public class GrabAndInteract : MonoBehaviour
 
 		if (Physics.Raycast(ray, out hit, MaxInteractionDistance, _interactableMask))
 		{
-			hit.transform.GetComponent<IInteractable>().Interact(_heldObject);
+			hit.transform.GetComponent<Interactable>().Interact(_heldObject);
 		}
 	}
 }
