@@ -31,9 +31,7 @@ namespace WW4.GameWorld
 			if (_currentBird != null) return;
 
 			_currentBird = BirdPool.GetBird();
-			_currentBird.transform.SetParent(transform);
 			_currentBird.transform.position = transform.position;
-			_currentBird.gameObject.SetActive(true);
 		}
 
 		private void StoreBird()

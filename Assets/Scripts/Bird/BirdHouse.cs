@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using WW4.Utility;
 
 namespace WW4.GameWorld

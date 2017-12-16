@@ -30,12 +30,19 @@ public class TestMenu : MonoBehaviour
 			TeleportLaser.ToggleLaser();
 		}
 		if (GUI.Button(new Rect(200, Screen.height - 100, 200, 100), "Interact with page\nwith random bird"))
-			IdentificationPage.Interact(BirdPool.GetBird().gameObject);
+			StartCoroutine(InteractWithPage());
 		if (GUI.Button(new Rect(400, Screen.height - 100, 200, 100), "Print all identified birds"))
 			SoundDatabase.PrintAllIdentifiedBirds();
 	}
 
-	private void TestSpawnPoint()
+    private IEnumerator InteractWithPage()
+    {
+        Bird bird = BirdPool.GetBird();
+        yield return new WaitUntil(()=>bird.IsReady);
+        IdentificationPage.Interact(bird.gameObject);
+    }
+
+    private void TestSpawnPoint()
 	{
 		if (_player == null)
 		{

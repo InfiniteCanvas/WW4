@@ -76,7 +76,7 @@ namespace WW4.TestScripts
 		{
 			foreach (var identifiedSound in _identifiedSounds)
 			{
-				print(string.Format("{0} : {1}", identifiedSound.Key, identifiedSound.Value));
+				print($"{identifiedSound.Key} : {identifiedSound.Value}");
 			}
 		}
 #endif

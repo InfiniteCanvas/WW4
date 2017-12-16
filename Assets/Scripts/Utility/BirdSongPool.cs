@@ -16,8 +16,9 @@ namespace WW4.Utility
 		public uint RefillThreshold = 5;
 
 		public static BirdSongPool Instance { private set; get; }
+        public bool HasAudioClips => _birdSongs.Count > 0;
 
-		private void Start()
+	    private void Start()
 		{
 			if (Instance == null)
 			{
@@ -59,7 +60,6 @@ namespace WW4.Utility
 		public static AudioClipUrlPair GetAudioClip()
 		{
 			Instance.RefillIfBelowThreshold();
-
 			return Instance._birdSongs.Count < 1 ? null : Instance._birdSongs.Dequeue();
 		}
 

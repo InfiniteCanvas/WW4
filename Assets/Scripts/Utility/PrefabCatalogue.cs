@@ -19,7 +19,7 @@ namespace WW4.Utility
 		//it's hacky, but I want it as static
 		public static GameObject GetPrefab(string name)
 		{
-			return (from element in Instance._dictionary where element.Name == name select element.Prefab).FirstOrDefault();
+		    return Instance._dictionary.FirstOrDefault(x => x.Name == name)?.Prefab;
 		}
 	}
 

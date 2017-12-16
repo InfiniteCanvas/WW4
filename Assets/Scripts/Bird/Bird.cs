@@ -5,17 +5,15 @@ using WW4.Utility;
 namespace WW4.GameWorld
 {
 	[RequireComponent(typeof(AudioSource))]
-	public class Bird : MonoBehaviour, IHitable
+	public class Bird : MonoBehaviour, IHitable, IPoolable
 	{
 		private AudioClipUrlPair _audioClipUrlPair;
 		private AudioSource _audioSource;
 
-		public string ClipUrl
-		{
-			get { return _audioClipUrlPair != null ? _audioClipUrlPair.Url : null; }
-		}
+	    public bool IsReady => _audioClipUrlPair != null;
+	    public string ClipUrl => _audioClipUrlPair?.Url;
 
-		public void OnHit()
+	    public void OnHit()
 		{
 			MessageSystem.OnBirdHit.Invoke(this);
 		}
@@ -42,15 +40,13 @@ namespace WW4.GameWorld
 		}
 
 		private IEnumerator LoadAudioClipAndPlay()
-		{
-			while (_audioClipUrlPair == null)
-			{
-				_audioClipUrlPair = BirdSongPool.GetAudioClip();
-				yield return new WaitForEndOfFrame();
-			}
+	    {
+            //wait until a clip has been loaded
+	        yield return new WaitUntil(() => BirdSongPool.Instance.HasAudioClips);
+	        _audioClipUrlPair = BirdSongPool.GetAudioClip();
 
-			_audioSource.clip = _audioClipUrlPair.AudioClip;
-			_audioSource.Play();
-		}
+	        _audioSource.clip = _audioClipUrlPair.AudioClip;
+	        _audioSource.Play();
+	    }
 	}
 }
