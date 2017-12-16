@@ -18,6 +18,7 @@ ModelImporter:
     2300000: Fragezeichen
     3300000: Fragezeichen
     4300000: Fragezeichen
+    6400000: Fragezeichen
     7400000: Take 001
     9500000: //RootNode
     13700000: Fragezeichen
@@ -49,14 +50,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
-    addColliders: 0
+    meshCompression: 1
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -69,7 +70,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
   importAnimation: 0
   copyAvatar: 0

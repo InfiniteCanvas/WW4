@@ -107,6 +107,26 @@ ModelImporter:
     4300034: the wick
     4300036: the candle stone
     4300038: the candle wax
+    6400000: Box006
+    6400002: Box007
+    6400004: Box008
+    6400006: Box009
+    6400008: Box010
+    6400010: Box011
+    6400012: Box012
+    6400014: Box013
+    6400016: Circle001
+    6400018: Line008
+    6400020: Line009
+    6400022: Line010
+    6400024: Line011
+    6400026: Line012
+    6400028: Line013
+    6400030: Line014
+    6400032: Line015
+    6400034: the candle stone
+    6400036: the candle wax
+    6400038: the wick
   materials:
     importMaterials: 1
     materialName: 0
@@ -135,14 +155,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
-    addColliders: 0
+    meshCompression: 1
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0

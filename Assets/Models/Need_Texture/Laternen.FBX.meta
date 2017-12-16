@@ -154,6 +154,35 @@ ModelImporter:
     4300052: Circle001
     4300054: the wick
     4300056: the candle wax
+    6400000: Circle001
+    6400002: frame
+    6400004: frame001
+    6400006: frame002
+    6400008: frame003
+    6400010: frame004
+    6400012: frame005
+    6400014: frame006
+    6400016: frame007
+    6400018: frame008
+    6400020: glass
+    6400022: glass001
+    6400024: glass002
+    6400026: glass003
+    6400028: glass004
+    6400030: glass005
+    6400032: glass006
+    6400034: glass007
+    6400036: glass008
+    6400038: laterne middle
+    6400040: laterne middle001
+    6400042: laterne oben
+    6400044: Laterne offen
+    6400046: laterne unten
+    6400048: laterne unten001
+    6400050: Line001
+    6400052: ref
+    6400054: the candle wax
+    6400056: the wick
   materials:
     importMaterials: 1
     materialName: 0
@@ -182,14 +211,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
-    addColliders: 0
+    meshCompression: 1
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -202,9 +231,9 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

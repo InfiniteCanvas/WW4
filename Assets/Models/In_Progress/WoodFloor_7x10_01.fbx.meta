@@ -262,9 +262,60 @@ ModelImporter:
     4300096: pCylinder52
     4300098: pCylinder53
     4300100: pCylinder54
+    6400000: pCylinder10
+    6400002: pCylinder11
+    6400004: pCylinder12
+    6400006: pCylinder13
+    6400008: pCylinder14
+    6400010: pCylinder15
+    6400012: pCylinder16
+    6400014: pCylinder17
+    6400016: pCylinder18
+    6400018: pCylinder19
+    6400020: pCylinder20
+    6400022: pCylinder21
+    6400024: pCylinder22
+    6400026: pCylinder23
+    6400028: pCylinder24
+    6400030: pCylinder25
+    6400032: pCylinder26
+    6400034: pCylinder27
+    6400036: pCylinder28
+    6400038: pCylinder29
+    6400040: pCylinder30
+    6400042: pCylinder31
+    6400044: pCylinder32
+    6400046: pCylinder33
+    6400048: pCylinder34
+    6400050: pCylinder35
+    6400052: pCylinder36
+    6400054: pCylinder37
+    6400056: pCylinder38
+    6400058: pCylinder39
+    6400060: pCylinder4
+    6400062: pCylinder40
+    6400064: pCylinder41
+    6400066: pCylinder42
+    6400068: pCylinder43
+    6400070: pCylinder44
+    6400072: pCylinder45
+    6400074: pCylinder46
+    6400076: pCylinder47
+    6400078: pCylinder48
+    6400080: pCylinder49
+    6400082: pCylinder5
+    6400084: pCylinder50
+    6400086: pCylinder51
+    6400088: pCylinder52
+    6400090: pCylinder53
+    6400092: pCylinder54
+    6400094: pCylinder6
+    6400096: pCylinder7
+    6400098: pCylinder8
+    6400100: pCylinder9
     9500000: //RootNode
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -292,13 +343,13 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -313,7 +364,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -329,10 +380,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

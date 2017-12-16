@@ -196,6 +196,43 @@ ModelImporter:
     4300068: Cylinder038
     4300070: Cylinder037
     4300072: Cylinder036
+    6400000: Cylinder001
+    6400002: Cylinder002
+    6400004: Cylinder003
+    6400006: Cylinder004
+    6400008: Cylinder005
+    6400010: Cylinder006
+    6400012: Cylinder007
+    6400014: Cylinder008
+    6400016: Cylinder009
+    6400018: Cylinder010
+    6400020: Cylinder013
+    6400022: Cylinder014
+    6400024: Cylinder015
+    6400026: Cylinder016
+    6400028: Cylinder017
+    6400030: Cylinder018
+    6400032: Cylinder019
+    6400034: Cylinder020
+    6400036: Cylinder023
+    6400038: Cylinder024
+    6400040: Cylinder025
+    6400042: Cylinder026
+    6400044: Cylinder027
+    6400046: Cylinder028
+    6400048: Cylinder029
+    6400050: Cylinder030
+    6400052: Cylinder031
+    6400054: Cylinder032
+    6400056: Cylinder033
+    6400058: Cylinder034
+    6400060: Cylinder035
+    6400062: Cylinder036
+    6400064: Cylinder037
+    6400066: Cylinder038
+    6400068: Cylinder039
+    6400070: Cylinder040
+    6400072: Cylinder041
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -226,14 +263,14 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
-    addColliders: 0
+    meshCompression: 1
+    addColliders: 1
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
