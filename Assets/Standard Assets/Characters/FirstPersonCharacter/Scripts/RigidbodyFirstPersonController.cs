@@ -126,7 +126,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void Update()
+        protected virtual void Update()
         {
             RotateView();
 
@@ -136,8 +136,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             GroundCheck();
             Vector2 input = GetInput();

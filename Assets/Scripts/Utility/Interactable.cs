@@ -4,6 +4,6 @@ namespace WW4.Utility
 {
 	public interface Interactable
 	{
-		void Interact(GameObject heldObject);
+		void Interact(GameObject heldObject=null);
 	}
 }
