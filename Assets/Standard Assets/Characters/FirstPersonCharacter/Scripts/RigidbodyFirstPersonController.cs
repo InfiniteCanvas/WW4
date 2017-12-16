@@ -118,7 +118,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void Start()
+        protected virtual void Start()
         {
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();

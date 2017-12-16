@@ -4,6 +4,11 @@ using WW4.Utility;
 
 public class FirstPersonController : RigidbodyFirstPersonController
 {
+    protected override void Start()
+    {
+        base.Start();
+    }
+
     protected override void Update()
     {
         base.Update();
