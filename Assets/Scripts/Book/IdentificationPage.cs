@@ -2,7 +2,7 @@
 using WW4.TestScripts;
 using WW4.Utility;
 
-namespace WW4.Entities
+namespace WW4.Entities.Book
 {
 	public class IdentificationPage : MonoBehaviour, Interactable
 	{
