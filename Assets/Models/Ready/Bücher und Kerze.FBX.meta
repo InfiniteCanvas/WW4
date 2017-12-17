@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0108baa7629df0f4f81224cca09288c8
-timeCreated: 1511013278
+guid: bf35a01de32055a4aaa4a9dc9fe4f6f7
+timeCreated: 1513529910
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -107,28 +107,8 @@ ModelImporter:
     4300034: the wick
     4300036: the candle stone
     4300038: the candle wax
-    6400000: Box006
-    6400002: Box007
-    6400004: Box008
-    6400006: Box009
-    6400008: Box010
-    6400010: Box011
-    6400012: Box012
-    6400014: Box013
-    6400016: Circle001
-    6400018: Line008
-    6400020: Line009
-    6400022: Line010
-    6400024: Line011
-    6400026: Line012
-    6400028: Line013
-    6400030: Line014
-    6400032: Line015
-    6400034: the candle stone
-    6400036: the candle wax
-    6400038: the wick
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -156,7 +136,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 1
-    addColliders: 1
+    addColliders: 0
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -193,7 +173,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

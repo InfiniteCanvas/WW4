@@ -32,7 +32,7 @@ ModelImporter:
     6400004: schild_oben
     6400006: schild_unten
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

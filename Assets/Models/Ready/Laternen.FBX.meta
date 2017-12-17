@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 4dc503c4e7417194aa58d7115d447151
+timeCreated: 1513529891
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Circle001
+    100002: frame
+    100004: frame001
+    100006: frame002
+    100008: frame003
+    100010: frame004
+    100012: frame005
+    100014: frame006
+    100016: frame007
+    100018: frame008
+    100020: glass
+    100022: glass001
+    100024: glass002
+    100026: glass003
+    100028: glass004
+    100030: glass005
+    100032: glass006
+    100034: glass007
+    100036: glass008
+    100038: Group001
+    100040: laterne middle
+    100042: laterne middle001
+    100044: laterne oben
+    100046: Laterne offen
+    100048: laterne unten
+    100050: laterne unten001
+    100052: //RootNode
+    100054: Line001
+    100056: ref
+    100058: the candle wax
+    100060: the wick
+    400000: Circle001
+    400002: frame
+    400004: frame001
+    400006: frame002
+    400008: frame003
+    400010: frame004
+    400012: frame005
+    400014: frame006
+    400016: frame007
+    400018: frame008
+    400020: glass
+    400022: glass001
+    400024: glass002
+    400026: glass003
+    400028: glass004
+    400030: glass005
+    400032: glass006
+    400034: glass007
+    400036: glass008
+    400038: Group001
+    400040: laterne middle
+    400042: laterne middle001
+    400044: laterne oben
+    400046: Laterne offen
+    400048: laterne unten
+    400050: laterne unten001
+    400052: //RootNode
+    400054: Line001
+    400056: ref
+    400058: the candle wax
+    400060: the wick
+    2300000: Circle001
+    2300002: frame
+    2300004: frame001
+    2300006: frame002
+    2300008: frame003
+    2300010: frame004
+    2300012: frame005
+    2300014: frame006
+    2300016: frame007
+    2300018: frame008
+    2300020: glass
+    2300022: glass001
+    2300024: glass002
+    2300026: glass003
+    2300028: glass004
+    2300030: glass005
+    2300032: glass006
+    2300034: glass007
+    2300036: glass008
+    2300038: laterne middle
+    2300040: laterne middle001
+    2300042: laterne oben
+    2300044: Laterne offen
+    2300046: laterne unten
+    2300048: laterne unten001
+    2300050: Line001
+    2300052: ref
+    2300054: the candle wax
+    2300056: the wick
+    3300000: Circle001
+    3300002: frame
+    3300004: frame001
+    3300006: frame002
+    3300008: frame003
+    3300010: frame004
+    3300012: frame005
+    3300014: frame006
+    3300016: frame007
+    3300018: frame008
+    3300020: glass
+    3300022: glass001
+    3300024: glass002
+    3300026: glass003
+    3300028: glass004
+    3300030: glass005
+    3300032: glass006
+    3300034: glass007
+    3300036: glass008
+    3300038: laterne middle
+    3300040: laterne middle001
+    3300042: laterne oben
+    3300044: Laterne offen
+    3300046: laterne unten
+    3300048: laterne unten001
+    3300050: Line001
+    3300052: ref
+    3300054: the candle wax
+    3300056: the wick
+    4300000: ref
+    4300002: laterne oben
+    4300004: laterne middle
+    4300006: laterne unten
+    4300008: frame
+    4300010: glass
+    4300012: frame001
+    4300014: glass001
+    4300016: glass002
+    4300018: frame002
+    4300020: frame003
+    4300022: glass003
+    4300024: Laterne offen
+    4300026: frame004
+    4300028: laterne unten001
+    4300030: glass004
+    4300032: laterne middle001
+    4300034: glass005
+    4300036: frame005
+    4300038: glass006
+    4300040: frame006
+    4300042: frame007
+    4300044: glass007
+    4300046: frame008
+    4300048: glass008
+    4300050: Line001
+    4300052: Circle001
+    4300054: the wick
+    4300056: the candle wax
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 1
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

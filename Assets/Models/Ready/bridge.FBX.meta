@@ -218,7 +218,7 @@ ModelImporter:
     6400066: Box034
     6400068: Box035
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -246,7 +246,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 1
-    addColliders: 1
+    addColliders: 0
     importVisibility: 0
     importBlendShapes: 1
     importCameras: 0
@@ -283,7 +283,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 0
+    hasExtraRoot: 1
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0

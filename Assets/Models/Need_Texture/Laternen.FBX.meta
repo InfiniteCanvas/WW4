@@ -184,7 +184,7 @@ ModelImporter:
     6400054: the candle wax
     6400056: the wick
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:

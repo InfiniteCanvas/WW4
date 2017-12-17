@@ -238,7 +238,7 @@ ModelImporter:
     4300000: pasted__pasted__pCube11
     6400000: pasted__pasted__pCube11
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
