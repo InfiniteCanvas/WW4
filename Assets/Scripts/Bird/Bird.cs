@@ -2,7 +2,7 @@
 using UnityEngine;
 using WW4.Utility;
 
-namespace WW4.GameWorld
+namespace WW4.Entities
 {
 	[RequireComponent(typeof(AudioSource)), RequireComponent(typeof(Collider))]
 	public class Bird : MonoBehaviour, IHitable, IPoolable
@@ -15,7 +15,7 @@ namespace WW4.GameWorld
 
 	    public void OnHit()
 		{
-			MessageSystem.BirdHitHandler.Invoke(this);
+			MessageSystem.BirdHitEventHandler.Invoke(this);
             PrefabPool.DespawnClone(gameObject);
 		}
 

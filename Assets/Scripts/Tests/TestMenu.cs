@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using WW4.Book;
-using WW4.GameWorld;
+using WW4.Entities;
 using WW4.TestScripts;
 using WW4.Utility;
 

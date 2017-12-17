@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using WW4.GameWorld;
+using WW4.Entities;
 
 namespace WW4.Utility
 {

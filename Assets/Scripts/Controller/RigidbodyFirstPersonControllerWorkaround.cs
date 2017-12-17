@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
+using WW4.Entities;
 using WW4.Utility;
 
 public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonController

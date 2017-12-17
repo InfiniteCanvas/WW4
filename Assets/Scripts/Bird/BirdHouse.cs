@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using WW4.Utility;
 
-namespace WW4.GameWorld
+namespace WW4.Entities
 {
     [RequireComponent(typeof(SphereCollider))]
     public class BirdHouse : MonoBehaviour, Interactable
@@ -12,7 +12,7 @@ namespace WW4.GameWorld
 
         private void Start()
         {
-            MessageSystem.ReturningToPoolHandler.AddListener(OnReturningToPool);
+            MessageSystem.ReturningToPoolEventHandler.AddListener(OnReturningToPool);
         }
 
         private void OnReturningToPool(GameObject go)

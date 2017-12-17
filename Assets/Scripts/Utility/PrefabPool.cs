@@ -43,7 +43,7 @@ namespace WW4.Utility
             if (ActiveObjects.ContainsKey(clone))
             {
                 clone.GetComponent<IPoolable>().Despawn();
-                MessageSystem.ReturningToPoolHandler.Invoke(clone);
+                MessageSystem.ReturningToPoolEventHandler.Invoke(clone);
                 ActiveObjects[clone].ReturnClone(clone);
                 ActiveObjects.Remove(clone);
             }

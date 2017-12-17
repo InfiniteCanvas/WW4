@@ -1,11 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using WW4.GameWorld;
+﻿using UnityEngine;
 using WW4.TestScripts;
 using WW4.Utility;
 
-namespace WW4.Book
+namespace WW4.Entities
 {
 	public class IdentificationPage : MonoBehaviour, Interactable
 	{

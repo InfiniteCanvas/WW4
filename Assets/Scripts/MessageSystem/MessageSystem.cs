@@ -1,21 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
-using WW4.GameWorld;
+using WW4.Entities;
+using WW4.Utility;
 
 public class MessageSystem : MonoBehaviour, InitializerControlled
 {
 
-	public static BirdHitEvent BirdHitHandler;
-    public static ReturningToPool ReturningToPoolHandler;
+	public static BirdHitEvent BirdHitEventHandler { get; private set; }
+    public static ReturningToPoolEvent ReturningToPoolEventHandler { get; private set; }
+    public static EntityGrabbedEvent EntityGrabbedEventHandler { get; private set; }
 
     public bool Initialize()
     {
-        BirdHitHandler = new BirdHitEvent();
-        BirdHitHandler.AddListener(x=>Debug.Log($"{x.ClipUrl} was hit"));
-        ReturningToPoolHandler = new ReturningToPool();
-        ReturningToPoolHandler.AddListener(x=>Debug.Log($"{x.name} returned to its pool"));
+        BirdHitEventHandler = new BirdHitEvent();
+        BirdHitEventHandler.AddListener(x=>Debug.Log($"{x.ClipUrl} was hit"));
+        ReturningToPoolEventHandler = new ReturningToPoolEvent();
+        ReturningToPoolEventHandler.AddListener(x=>Debug.Log($"{x.name} returned to its pool"));
+        EntityGrabbedEventHandler = new EntityGrabbedEvent();
+
         return true;
     }
 
@@ -26,10 +28,13 @@ public class MessageSystem : MonoBehaviour, InitializerControlled
 }
 
 public class BirdHitEvent : UnityEvent<Bird>
-{
-	
+{	
 }
 
-public class ReturningToPool : UnityEvent<GameObject>
+public class ReturningToPoolEvent : UnityEvent<GameObject>
+{
+}
+
+public class EntityGrabbedEvent : UnityEvent<IGrabbable>
 {
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using WW4.Utility;
 
-namespace WW4.GameWorld
+namespace WW4.Entities
 {
 	[RequireComponent(typeof(SphereCollider))]
 	public class BirdSpawn : MonoBehaviour
