@@ -37,6 +37,6 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
         Ball ball = PrefabPool.SpawnClone<Ball>(PrefabCatalogue.Instance["Ball"]);
         
         ball.transform.position = transform.position + transform.forward;
-        ball.Rigidbody.AddForce((transform.forward+transform.up*.5f).normalized * force, ForceMode.VelocityChange);
+        ball.Rigidbody.AddForce((Camera.main.ViewportPointToRay(new Vector2(.5f, .7f)).direction) * force, ForceMode.VelocityChange);
     }
 }
