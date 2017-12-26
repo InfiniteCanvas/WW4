@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
+using WW4.EventSystem;
 using WW4.Utility;
 
 namespace WW4.Entities
 {
     [RequireComponent(typeof(SphereCollider))]
-    public class BirdHouse : MonoBehaviour, Interactable
+    public class BirdHouse : MonoBehaviour, IInteractable
     {
 	    public Transform SpawnPoint;
 

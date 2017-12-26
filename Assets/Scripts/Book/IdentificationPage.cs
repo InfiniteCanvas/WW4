@@ -4,7 +4,7 @@ using WW4.Utility;
 
 namespace WW4.Entities.Book
 {
-	public class IdentificationPage : MonoBehaviour, Interactable
+	public class IdentificationPage : MonoBehaviour, IInteractable
 	{
 		public string BirdName;
 

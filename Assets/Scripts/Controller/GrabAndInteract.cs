@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using WW4.EventSystem;
 using WW4.Utility;
 
 public class GrabAndInteract : MonoBehaviour
@@ -46,6 +47,8 @@ public class GrabAndInteract : MonoBehaviour
 		_collidingObject = null;
 		FixedJoint joint = AddFixedJoint();
 		joint.connectedBody = _heldObject.GetComponent<Rigidbody>();
+
+        MessageSystem.EntityGrabbedEventHandler.Invoke(_heldObject, _heldObject.GetComponent<IGrabbable>());
 	}
 
 	private FixedJoint AddFixedJoint()
@@ -89,7 +92,7 @@ public class GrabAndInteract : MonoBehaviour
 
 		if (Physics.Raycast(ray, out hit, MaxInteractionDistance, _interactableMask))
 		{
-			hit.transform.GetComponent<Interactable>().Interact(_heldObject);
+			hit.transform.GetComponent<IInteractable>().Interact(_heldObject);
 		}
 	}
 }

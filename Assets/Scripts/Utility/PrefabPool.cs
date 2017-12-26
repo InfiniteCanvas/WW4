@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using WW4.EventSystem;
 
 //Assuming only one component on gameObject implements IPoolable
 namespace WW4.Utility

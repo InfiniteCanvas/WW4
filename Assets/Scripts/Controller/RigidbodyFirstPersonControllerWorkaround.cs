@@ -27,7 +27,7 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
         if (Physics.Raycast(transform.position, transform.forward, out hit, 2f, Mask))
         {
             print($"Target found! Interacting with {hit.transform.name}.");
-            hit.transform.GetComponent<Interactable>()?.Interact();
+            hit.transform.GetComponent<IInteractable>()?.Interact();
         }
     }
 

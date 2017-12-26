@@ -43080,8 +43080,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 793241802}
-  m_LocalRotation: {x: -0.33824062, y: -0.65091854, z: -0.40172333, w: 0.54819405}
-  m_LocalPosition: {x: 718.8909, y: -176.3181, z: 536.52966}
+  m_LocalRotation: {x: 0.031296108, y: 0.965594, z: 0.13884231, w: -0.21765034}
+  m_LocalPosition: {x: 730.93274, y: -0.000019073486, z: 499.2136}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -85623,12 +85623,14 @@ GameObject:
   - component: {fileID: 1658344592}
   - component: {fileID: 1658344594}
   - component: {fileID: 1658344593}
-  m_Layer: 0
+  - component: {fileID: 1658344596}
+  - component: {fileID: 1658344595}
+  m_Layer: 8
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1658344592
 Transform:
@@ -85637,13 +85639,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1658344591}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.48619798, y: 1.0115848, z: 0.033087116}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 63891295}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
 --- !u!23 &1658344593
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -85685,6 +85687,30 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1658344591}
   m_Mesh: {fileID: 4300000, guid: f30427d884ef42542a5218d5590efd23, type: 3}
+--- !u!65 &1658344595
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1658344591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 96.78787, y: 31.577354, z: 202.31699}
+  m_Center: {x: 47.636307, y: 3.3857324, z: -0.0018291833}
+--- !u!114 &1658344596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1658344591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70bd24df78134b47bf239419c267f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: 120
 --- !u!1 &1659834270
 GameObject:
   m_ObjectHideFlags: 0
