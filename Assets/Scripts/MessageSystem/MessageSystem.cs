@@ -12,6 +12,7 @@ namespace WW4.EventSystem
         public static BirdHitEvent BirdHitEventHandler { get; private set; }
         public static ReturningToPoolEvent ReturningToPoolEventHandler { get; private set; }
         public static EntityGrabbedEvent EntityGrabbedEventHandler { get; private set; }
+        public static EntityThrownEvent EntityThrownEventHandler { get; private set; }
         public static NodeTraverserEvent NodeTraverserEventHandler { get; private set; }
 
         public bool Initialize()
@@ -21,7 +22,9 @@ namespace WW4.EventSystem
             ReturningToPoolEventHandler = new ReturningToPoolEvent();
             ReturningToPoolEventHandler.AddListener(x=>Debug.Log($"{x.name} returned to its pool"));
             EntityGrabbedEventHandler = new EntityGrabbedEvent();
-            EntityGrabbedEventHandler.AddListener((x,y)=>Debug.Log($"GameObject [{x.name}] of type [{y.GetContractorType().FullName}] was grabbed."));
+            EntityGrabbedEventHandler.AddListener((go,grabbable) => Debug.Log($"GameObject [{go.name}] of type [{grabbable.GetContractorType().FullName}] was grabbed."));
+            EntityThrownEventHandler = new EntityThrownEvent();
+            EntityThrownEventHandler.AddListener((go, grabbable) => Debug.Log($"GameObject [{go.name}] of type [{grabbable.GetContractorType().FullName}] was thrown."));
             NodeTraverserEventHandler = new NodeTraverserEvent();
             NodeTraverserEventHandler.AddListener((x,y)=>Debug.Log($"{nameof(NodeTraverserEvent)} was called with Node: {x.name} in system: {x.EventSystemID}\nArgs: {y.MoveDirection}"));
 
@@ -43,6 +46,10 @@ namespace WW4.EventSystem
     }
 
     public class EntityGrabbedEvent : UnityEvent<GameObject, IGrabbable>
+    {
+    }
+
+    public class EntityThrownEvent : UnityEvent<GameObject, IGrabbable>
     {
     }
 

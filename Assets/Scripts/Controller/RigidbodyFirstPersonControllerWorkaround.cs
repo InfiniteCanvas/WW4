@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 using WW4.Entities;
+using WW4.EventSystem;
 using WW4.Utility;
 
 public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonController
@@ -43,7 +44,7 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
             if (interactable != null)
             {
                 print($"Target found! Interacting with {hit.transform.name}.");
-                interactable.Interact();
+                interactable.Interact(_fixedJoint?.gameObject);
             }
         }
     }
@@ -68,12 +69,14 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
         if (Physics.Raycast(ray, out hit, 3f, Mask))
         {
             Debug.Log($"Grab raycast hit {hit.transform.name}.");
-            if (hit.transform.GetComponent<IGrabbable>() != null)
-            {
-                if (_fixedJoint != null)
-                    print($"Target found! Grabbing {hit.transform.name}.");
+            var grabbable = hit.transform.GetComponent<IGrabbable>();
+            if (grabbable != null)
+            {                
+                print($"Target found! Grabbing {hit.transform.name} of type {grabbable.GetContractorType()}.");
+                hit.transform.position = GrabRigidbody.position;
                 _fixedJoint = AddOrGetFixedJoint(hit.transform.gameObject);
                 _fixedJoint.connectedBody = GrabRigidbody;
+                MessageSystem.EntityGrabbedEventHandler.Invoke(hit.transform.gameObject, grabbable);
             }
         }
     }
@@ -90,6 +93,8 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
     private void ThrowGrabbedObject()
     {
         Debug.Log("Throwing object");
+        MessageSystem.EntityThrownEventHandler.Invoke(_fixedJoint.gameObject, _fixedJoint.GetComponent<IGrabbable>());
+
         Rigidbody rb = _fixedJoint.GetComponent<Rigidbody>();
         if (rb != null)
         {
