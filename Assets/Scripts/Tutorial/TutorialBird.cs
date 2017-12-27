@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.Remoting.Messaging;
-using UnityEngine;
+﻿using UnityEngine;
 using WW4.EventSystem;
 using WW4.Utility;
 
@@ -8,9 +6,15 @@ namespace WW4.Entities
 {
     public class TutorialBird : GrabbableObjects
     {
-        public BirdName Name;
+        public enum BirdName
+        {
+            Coopy,
+            Doopy,
+            Poopy
+        }
 
         private AudioSource _audioSource;
+        public BirdName Name;
 
         private void Awake()
         {
@@ -22,30 +26,19 @@ namespace WW4.Entities
         private void OnGrabbed(GameObject go, IGrabbable grabbable)
         {
             if (go == gameObject)
-            {
                 _audioSource.Play();
-            }
         }
 
         private void OnThrown(GameObject go, IGrabbable grabbable)
         {
             if (go == gameObject)
-            {
                 _audioSource.Stop();
-            }
         }
 
         protected override void OnJointBreak(float breakForce)
         {
             base.OnJointBreak(breakForce);
             _audioSource.Stop();
-        }
-
-        public enum BirdName
-        {
-            Coopy,
-            Doopy,
-            Poopy
         }
     }
 }

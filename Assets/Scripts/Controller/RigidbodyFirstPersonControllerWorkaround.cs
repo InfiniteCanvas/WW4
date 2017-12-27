@@ -22,7 +22,6 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
     protected override void Start()
     {
         base.Start();
-        Debug.Log("Initializing first person controller");
     }
 
     protected override void Update()
@@ -35,7 +34,6 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
 
     private void Interact()
     {
-        print("Searching for interaction target...");
         RaycastHit hit;
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         if (Physics.Raycast(ray, out hit, 3f, Mask))
@@ -43,8 +41,11 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
             var interactable = hit.transform.GetComponent<IInteractable>();
             if (interactable != null)
             {
-                print($"Target found! Interacting with {hit.transform.name}.");
-                interactable.Interact(_fixedJoint?.gameObject);
+                //print($"Target found! Interacting with {hit.transform.name}.");
+                if (_fixedJoint != null)
+                    interactable.Interact(_fixedJoint?.gameObject);
+                else
+                    interactable.Interact();
             }
         }
     }
@@ -63,16 +64,14 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
 
     private void Grab()
     {
-        print("Searching for grabbable target...");
         RaycastHit hit;
         Ray ray = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
         if (Physics.Raycast(ray, out hit, 3f, Mask))
         {
-            Debug.Log($"Grab raycast hit {hit.transform.name}.");
             var grabbable = hit.transform.GetComponent<IGrabbable>();
             if (grabbable != null)
             {                
-                print($"Target found! Grabbing {hit.transform.name} of type {grabbable.GetContractorType()}.");
+                //print($"Target found! Grabbing {hit.transform.name} of type {grabbable.GetContractorType()}.");
                 hit.transform.position = GrabRigidbody.position;
                 _fixedJoint = AddOrGetFixedJoint(hit.transform.gameObject);
                 _fixedJoint.connectedBody = GrabRigidbody;
@@ -92,7 +91,6 @@ public class RigidbodyFirstPersonControllerWorkaround : RigidbodyFirstPersonCont
 
     private void ThrowGrabbedObject()
     {
-        Debug.Log("Throwing object");
         MessageSystem.EntityThrownEventHandler.Invoke(_fixedJoint.gameObject, _fixedJoint.GetComponent<IGrabbable>());
 
         Rigidbody rb = _fixedJoint.GetComponent<Rigidbody>();

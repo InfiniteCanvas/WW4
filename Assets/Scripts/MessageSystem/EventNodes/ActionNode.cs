@@ -13,7 +13,7 @@ namespace WW4.EventSystem
 
         private void Action()
         {
-            Debug.Log($"End reached. Root is {Root.name}. EventSystemID is {EventSystemID}.");
+            Debug.Log($"Matched all birds!\nEnd reached. Root is {Root.name}. EventSystemID is {EventSystemID}.");
         }
     }
 }
