@@ -63,10 +63,12 @@ public class GrabAndInteract : MonoBehaviour
 	{
 		if (GetComponent<FixedJoint>())
 		{
-			GetComponent<FixedJoint>().connectedBody = null;
-			Destroy(GetComponent<FixedJoint>());
-			_heldObject.GetComponent<Rigidbody>().velocity = _controller.GetVelocity();
-			_heldObject.GetComponent<Rigidbody>().angularVelocity = _controller.GetAngularVelocity();
+            var fj = GetComponent<FixedJoint>();
+            fj.connectedBody = null;
+			Destroy(fj);
+		    var rb = _heldObject.GetComponent<Rigidbody>();
+			rb.velocity = _controller.GetVelocity();
+			rb.angularVelocity = _controller.GetAngularVelocity();
 		}
 		_heldObject = null;
 	}
