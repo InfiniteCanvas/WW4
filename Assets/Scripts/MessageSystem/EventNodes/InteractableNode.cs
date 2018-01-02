@@ -9,8 +9,14 @@ namespace WW4.EventSystem
     {
         public void Interact(GameObject heldObject = null)
         {
-            if(Active)
-                MessageSystem.NodeTraverserEventHandler.Invoke(this, new NodeTraverserEventArgs());
+            if(IsActive)
+                MessageSystem.NodeTraverserEventHandler.Invoke(this, new NodeTraverserEventArgs(NextNode));
+        }
+
+        [SerializeField] private EventNode _nextNode;
+        protected override EventNode GetNext()
+        {
+            return _nextNode;
         }
     }
 }

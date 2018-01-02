@@ -2,13 +2,13 @@
 using WW4.EventSystem;
 using WW4.Utility;
 
-namespace WW4.Entities
+namespace WW4.Tutorial
 {
     public class TutorialPage : MonoBehaviour, IInteractable, IConditionalNodeElement
     {
         public TutorialBird.BirdName Name;
 
-        private bool _matched;
+        public bool Matched { get; private set; }
 
         public void Interact(GameObject heldObject = null)
         {
@@ -23,7 +23,7 @@ namespace WW4.Entities
         private void OnMatch(GameObject go)
         {
             print("You matched the right bird to the right page!");
-            _matched = true;
+            Matched = true;
             Destroy(go);
         }
 
@@ -34,7 +34,7 @@ namespace WW4.Entities
 
         public bool ConditionFulfilled()
         {
-            return _matched;
+            return Matched;
         }
     }
 }

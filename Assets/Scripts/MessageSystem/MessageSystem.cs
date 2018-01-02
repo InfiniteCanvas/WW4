@@ -26,7 +26,7 @@ namespace WW4.EventSystem
             EntityThrownEventHandler = new EntityThrownEvent();
             EntityThrownEventHandler.AddListener((go, grabbable) => Debug.Log($"GameObject [{go.name}] of type [{grabbable.GetContractorType().FullName}] was thrown."));
             NodeTraverserEventHandler = new NodeTraverserEvent();
-            NodeTraverserEventHandler.AddListener((x,y)=>Debug.Log($"{nameof(NodeTraverserEvent)} was called with Node: {x.name} in system: {x.EventSystemID}\nArgs: {y.MoveDirection}"));
+            NodeTraverserEventHandler.AddListener((x,y)=>Debug.Log($"{nameof(NodeTraverserEvent)} was called with Node: {x.name} in system: {x.EventSystemID}\nArgs: {y.TargetNode}"));
 
             return true;
         }
@@ -59,11 +59,12 @@ namespace WW4.EventSystem
 
     public class NodeTraverserEventArgs : EventArgs
     {
-        public NodeTraverserEventArgs(MoveDirection moveDirection = MoveDirection.Next)
+        public NodeTraverserEventArgs(EventNode targetNode=null)
         {
-            MoveDirection = moveDirection;
+            TargetNode = targetNode;
         }
 
-        public MoveDirection MoveDirection { get; }
+        public EventNode TargetNode { get; }
+        public bool HasTargetNode => TargetNode != null;
     }
 }

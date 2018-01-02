@@ -10,7 +10,6 @@ namespace WW4.EventSystem
     {
         [SerializeField] private Transform[] _conditionalNodeElements;
         public Transform[] ConditionalNodeElements => _conditionalNodeElements;
-        public MoveDirection MoveDirection;
 
         private Coroutine _checkConditions;
         private IConditionalNodeElement[] _elements;
@@ -33,15 +32,11 @@ namespace WW4.EventSystem
 
         private void OnConditionChange(Object caller, EventArgs args)
         {
-            if (!Active) return;
+            if (!IsActive) return;
 
             if (!ConditionsFulfilled()) return;
 
-            if(MoveDirection == MoveDirection.Next)
-                MessageSystem.NodeTraverserEventHandler.Invoke(this, new NodeTraverserEventArgs());
-
-            if(MoveDirection == MoveDirection.Previous)
-                MessageSystem.NodeTraverserEventHandler.Invoke(this, new NodeTraverserEventArgs(MoveDirection.Previous));
+            MessageSystem.NodeTraverserEventHandler.Invoke(this, new NodeTraverserEventArgs(NextNode));
         }
 
         private bool ConditionsFulfilled()
@@ -62,7 +57,11 @@ namespace WW4.EventSystem
                 return false;
         }
 
-
+        [SerializeField] private EventNode _nextNode;
+        protected override EventNode GetNext()
+        {
+            return _nextNode;
+        }
     }
 
     public enum MoveDirection

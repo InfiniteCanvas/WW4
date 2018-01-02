@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using WW4.Entities;
 using WW4.EventSystem;
 using WW4.Utility;
 
-namespace WW4.Entities
+
+namespace WW4.Tutorial
 {
     public class TutorialBird : GrabbableObjects
     {
