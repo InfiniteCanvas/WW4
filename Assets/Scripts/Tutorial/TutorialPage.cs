@@ -26,6 +26,7 @@ namespace WW4.Tutorial
         {
             print("You matched the right bird to the right page!");
             _matched++;
+            Destroy(go.GetComponent<FixedJoint>());
             go.SetActive(false);
         }
 
