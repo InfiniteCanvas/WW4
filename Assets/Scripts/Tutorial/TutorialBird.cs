@@ -15,6 +15,8 @@ namespace WW4.Tutorial
             Poopy
         }
 
+        private Vector3 _position;
+        private Quaternion _rotation;
         private AudioSource _audioSource;
         public BirdName Name;
 
@@ -23,6 +25,9 @@ namespace WW4.Tutorial
             _audioSource = GetComponent<AudioSource>();
             MessageSystem.EntityGrabbedEventHandler.AddListener(OnGrabbed);
             MessageSystem.EntityThrownEventHandler.AddListener(OnThrown);
+            _position = transform.localPosition;
+            _rotation = transform.localRotation;
+            gameObject.SetActive(false);
         }
 
         private void OnGrabbed(GameObject go, IGrabbable grabbable)
@@ -41,6 +46,14 @@ namespace WW4.Tutorial
         {
             base.OnJointBreak(breakForce);
             _audioSource.Stop();
+        }
+
+        public void ResetAndActivate()
+        {
+            transform.localPosition = _position;
+            transform.localRotation = _rotation;
+            gameObject.SetActive(true);
+            print($"{name} has been reset and activated.");
         }
     }
 }

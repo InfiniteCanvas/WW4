@@ -7,8 +7,10 @@ namespace WW4.Tutorial
     public class TutorialPage : MonoBehaviour, IInteractable, IConditionalNodeElement
     {
         public TutorialBird.BirdName Name;
+        public int NeededMatches { get; private set; }
+        private int _matched;
 
-        public bool Matched { get; private set; }
+        public bool Matched => _matched == NeededMatches;
 
         public void Interact(GameObject heldObject = null)
         {
@@ -23,8 +25,8 @@ namespace WW4.Tutorial
         private void OnMatch(GameObject go)
         {
             print("You matched the right bird to the right page!");
-            Matched = true;
-            Destroy(go);
+            _matched++;
+            go.SetActive(false);
         }
 
         private void OnMismatch()
@@ -35,6 +37,18 @@ namespace WW4.Tutorial
         public bool ConditionFulfilled()
         {
             return Matched;
+        }
+
+        public void ResetMatched()
+        {
+            _matched = 0;
+            print($"{name} has been reset.");
+        }
+
+        public void SetNeededMatches(int matches)
+        {
+            NeededMatches = matches;
+            print($"{name} set needed matches to {NeededMatches}.");
         }
     }
 }

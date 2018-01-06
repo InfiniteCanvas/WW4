@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace WW4.EventSystem
 {
     public class ActionNode : EventNode
     {
         [SerializeField] private EventNode _nextNode;
+        public UnityEvent ActionHandler;
 
         private void Awake()
         {
@@ -15,7 +17,8 @@ namespace WW4.EventSystem
 
         private void Action()
         {
-            Debug.Log($"Matched all birds!\nEnd reached. Root is {Root.name}. EventSystemID is {EventSystemID}.");
+            ActionHandler?.Invoke();
+            MessageSystem.NodeTraverserEventHandler.Invoke(this, new NodeTraverserEventArgs(NextNode));
         }
 
         protected override EventNode GetNext()
