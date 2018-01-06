@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 namespace WW4.EventSystem
 {
@@ -12,13 +13,13 @@ namespace WW4.EventSystem
         public EventNode NextNode => GetNext();
         [SerializeField] private bool _isActive;
         public bool IsActive => _isActive;
-        [SerializeField] private int _eventSystemID;
+        [SerializeField] private string _eventSystemID;
 
-        public int EventSystemID
+        public string EventSystemID
         {
             get
             {
-                if (_eventSystemID == 0 && HasPrevious)
+                if (_eventSystemID == string.Empty && HasPrevious)
                     return _eventSystemID = _previousNode.EventSystemID;
                 else
                     return _eventSystemID;
@@ -28,11 +29,8 @@ namespace WW4.EventSystem
         public bool HasNext => GetNext() != null;
         public bool HasPrevious => _previousNode != null;
 
-        public delegate void ActivationEvent();
-        public delegate void DeactivationEvent();
-
-        public event ActivationEvent OnActivation;
-        public event DeactivationEvent OnDeactivation;
+        [HideInInspector] public UnityEvent OnActivation;
+        [HideInInspector] public UnityEvent OnDeactivation;
 
         /// <summary>
         /// Returns true if previous node is set to a value, false if node is set to null.
@@ -53,6 +51,11 @@ namespace WW4.EventSystem
             }
         }
 
+        /// <summary>
+        /// Returns the state it is set to.
+        /// </summary>
+        /// <param name="active">The state it will be set to.</param>
+        /// <returns></returns>
         public virtual bool SetActive(bool active)
         {
             _isActive = active;

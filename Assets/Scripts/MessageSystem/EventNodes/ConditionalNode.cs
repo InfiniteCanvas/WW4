@@ -16,8 +16,8 @@ namespace WW4.EventSystem
 
         private void Awake()
         {            
-            OnActivation += ()=> _checkConditions = StartCoroutine(CheckConditions());
-            OnDeactivation += () => StopCoroutine(_checkConditions);
+            OnActivation.AddListener(()=> _checkConditions = StartCoroutine(CheckConditions()));
+            OnDeactivation.AddListener(() => StopCoroutine(_checkConditions));
         }
 
         private IEnumerator CheckConditions()

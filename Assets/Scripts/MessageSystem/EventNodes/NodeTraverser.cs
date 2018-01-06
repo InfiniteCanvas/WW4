@@ -4,10 +4,7 @@ namespace WW4.EventSystem
 {
     public class NodeTraverser : MonoBehaviour
     {
-        [SerializeField] private int _eventSystemID;
-        public int EventSystemID => _eventSystemID;
-
-        [SerializeField]private EventNode _currentNode;
+        private EventNode _currentNode;
         public EventNode CurrentNode => _currentNode;
 
         public EventNode StartingNode;
@@ -21,12 +18,12 @@ namespace WW4.EventSystem
 
         private void OnEventNodeTraverserEvent(EventNode node, NodeTraverserEventArgs args)
         {
-            if (node.EventSystemID != _eventSystemID) return;
+            if (node.Root != StartingNode.Root) return;
 
             if (args.HasTargetNode)
                 MoveToNode(args.TargetNode);
             else
-                Debug.Log($"Reached the end of EventTree {_eventSystemID}.");
+                Debug.Log($"Reached the end of EventTree with root {StartingNode.Root}.");
         }
 
         private void MoveToNextNode()

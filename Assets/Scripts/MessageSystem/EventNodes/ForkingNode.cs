@@ -16,20 +16,23 @@ namespace WW4.EventSystem
 
         private void Awake()
         {
-            OnActivation += () => {
-                foreach (var eventNode in _nodes)
+            OnActivation.AddListener(() =>
                 {
-                    eventNode.SetActive(true);
+                    foreach (var eventNode in _nodes)
+                    {
+                        eventNode.SetActive(true);
+                    }
                 }
-            };
+            );
 
-            OnDeactivation += () =>
-            {
-                foreach (var eventNode in _nodes)
+            OnDeactivation.AddListener(() =>
                 {
-                    eventNode.SetActive(false);
+                    foreach (var eventNode in _nodes)
+                    {
+                        eventNode.SetActive(false);
+                    }
                 }
-            };
+            );
         }
     }
 }

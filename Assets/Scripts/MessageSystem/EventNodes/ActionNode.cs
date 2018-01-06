@@ -12,7 +12,7 @@ namespace WW4.EventSystem
 
         private void Awake()
         {
-            OnActivation += Action;
+            OnActivation.AddListener(Action);
         }
 
         private void Action()
