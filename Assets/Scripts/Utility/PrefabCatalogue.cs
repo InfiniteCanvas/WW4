@@ -30,9 +30,9 @@ namespace WW4.Utility
 	        }
 	    }
 
-	    public string GetClassName()
+	    public Type GetClass()
 	    {
-	        return typeof(PrefabCatalogue).FullName;
+	        return typeof(PrefabCatalogue);
 	    }
 	}
 

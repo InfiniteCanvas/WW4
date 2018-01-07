@@ -15,9 +15,9 @@ namespace WW4.Utility
             foreach (var c in controlledComponents)
             {
                 if (c.Initialize())
-                    Debug.Log($"{c.GetClassName()} successfully initialized.");
+                    Debug.Log($"{c.GetClass()} successfully initialized.");
                 else
-                    Debug.LogWarning($"{c.GetClassName()} was not initialized.");
+                    Debug.LogWarning($"{c.GetClass()} was not initialized.");
             }
         }
     }

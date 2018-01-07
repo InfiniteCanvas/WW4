@@ -4,47 +4,31 @@ namespace WW4.EventSystem
 {
     public class NodeTraverser : MonoBehaviour
     {
-        private EventNode _currentNode;
-        public EventNode CurrentNode => _currentNode;
-
-        public EventNode StartingNode;
+        [SerializeField] private EventNode _startingNode;
+        public EventNode CurrentNode { get; private set; }
 
         private void Start()
         {
             MessageSystem.NodeTraverserEventHandler.AddListener(OnEventNodeTraverserEvent);
-            StartingNode.SetActive(true);
-            _currentNode = StartingNode;
+            _startingNode.SetActive(true);
+            CurrentNode = _startingNode;
         }
 
         private void OnEventNodeTraverserEvent(EventNode node, NodeTraverserEventArgs args)
         {
-            if (node.Root != StartingNode.Root) return;
+            if (node.Root != _startingNode.Root) return;
 
             if (args.HasTargetNode)
                 MoveToNode(args.TargetNode);
             else
-                Debug.Log($"Reached the end of EventTree with root {StartingNode.Root}.");
-        }
-
-        private void MoveToNextNode()
-        {
-            _currentNode.SetActive(false);
-            _currentNode = _currentNode.NextNode;
-            _currentNode.SetActive(true);
+                Debug.Log($"Reached the end of EventTree with root {_startingNode.Root}.");
         }
 
         private void MoveToNode(EventNode targetNode)
         {
-            _currentNode.SetActive(false);
-            _currentNode = targetNode;
-            _currentNode.SetActive(true);
-        }
-
-        private void MoveToPreviousNode()
-        {
-            _currentNode.SetActive(false);
-            _currentNode = _currentNode.PreviousNode;
-            _currentNode.SetActive(true);
+            CurrentNode.SetActive(false);
+            CurrentNode = targetNode;
+            CurrentNode.SetActive(true);
         }
     }
 }

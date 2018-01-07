@@ -5,16 +5,19 @@ namespace WW4.EventSystem
 {
     public abstract class EventNode : MonoBehaviour
     {
+        //Must have a root, or it loops
         [SerializeField]private EventNode _root;
         public EventNode Root => _root ?? (_root = _previousNode ? _previousNode.Root : this);
 
         [SerializeField]private EventNode _previousNode;
-        public EventNode PreviousNode => _previousNode;        
+        public EventNode PreviousNode => _previousNode;
+        
         public EventNode NextNode => GetNext();
+
         [SerializeField] private bool _isActive;
         public bool IsActive => _isActive;
-        [SerializeField] private string _eventSystemID;
 
+        [SerializeField] private string _eventSystemID;
         public string EventSystemID
         {
             get
@@ -33,34 +36,15 @@ namespace WW4.EventSystem
         [HideInInspector] public UnityEvent OnDeactivation;
 
         /// <summary>
-        /// Returns true if previous node is set to a value, false if node is set to null.
-        /// </summary>
-        /// <param name="node">Previous EventNode.</param>
-        /// <returns></returns>
-        public bool SetPreviousNode(EventNode node)
-        {
-            if (node)
-            {
-                _previousNode = node;
-                return true;
-            }
-            else
-            {
-                _previousNode = null;
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Returns the state it is set to.
         /// </summary>
-        /// <param name="active">The state it will be set to.</param>
+        /// <param name="activeState">The state it will be set to.</param>
         /// <returns></returns>
-        public virtual bool SetActive(bool active)
+        public virtual bool SetActive(bool activeState)
         {
-            _isActive = active;
+            _isActive = activeState;
 
-            if (active)
+            if (activeState)
                 OnActivation?.Invoke();
             else
                 OnDeactivation?.Invoke();

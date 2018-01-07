@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using WW4.Database;
 using WW4.TestScripts;
 using System.IO;
+using Random = UnityEngine.Random;
 
 namespace WW4.Utility
 {
@@ -73,9 +75,9 @@ namespace WW4.Utility
 	        }
         }
 
-	    public string GetClassName()
+	    public Type GetClass()
 	    {
-	        return typeof(BirdSongPool).FullName;
+	        return typeof(BirdSongPool);
 	    }
 	}
 

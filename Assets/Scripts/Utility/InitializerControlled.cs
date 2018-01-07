@@ -1,5 +1,7 @@
-﻿public interface InitializerControlled
+﻿using System;
+
+public interface InitializerControlled
 {
     bool Initialize();
-    string GetClassName();
+    Type GetClass();
 }

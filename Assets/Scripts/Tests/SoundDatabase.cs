@@ -1,12 +1,12 @@
 ﻿#define TESTING
 
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Xml.Serialization;
 using UnityEngine;
 using WW4.Database;
 using Newtonsoft.Json;
+using Random = UnityEngine.Random;
 
 namespace WW4.TestScripts
 {
@@ -87,9 +87,9 @@ namespace WW4.TestScripts
 	            return false;
 	        }
 	    }
-	    public string GetClassName()
+	    public Type GetClass()
 	    {
-	        return typeof(SoundDatabase).FullName;
+	        return typeof(SoundDatabase);
 	    }
 	}
 }

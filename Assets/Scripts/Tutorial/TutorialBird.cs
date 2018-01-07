@@ -53,7 +53,6 @@ namespace WW4.Tutorial
             transform.localPosition = _position;
             transform.localRotation = _rotation;
             gameObject.SetActive(true);
-            print($"{name} has been reset and activated.");
         }
     }
 }
