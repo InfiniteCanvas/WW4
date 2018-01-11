@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: b8c14d91decf9e34e80c931a0b91d40c
+timeCreated: 1515699752
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bird Feather
+  fontNames:
+  - Bird Feather
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
