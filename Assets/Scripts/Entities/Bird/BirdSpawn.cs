@@ -6,12 +6,11 @@ namespace WW4.Entities
 	[RequireComponent(typeof(SphereCollider))]
 	public class BirdSpawn : MonoBehaviour
 	{
-		private Bird _currentBird;
-		public int PlayerDetectionRange;
+        private Bird _currentBird;
 
 		private void Start()
 		{
-			GetComponent<SphereCollider>().radius = PlayerDetectionRange;
+			//GetComponent<SphereCollider>().radius = PlayerDetectionRange;
 		}
 
 		private void OnTriggerEnter(Collider other)
