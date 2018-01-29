@@ -8,7 +8,7 @@ public class GrabAndInteract : MonoBehaviour
 	private InputManager _controller;
 	private GameObject _heldObject;
 	private LayerMask _interactableMask;
-	private const float MaxInteractionDistance = 2f;
+	private const float MaxInteractionDistance = 3f;
 
 	private void Start()
 	{
@@ -63,6 +63,7 @@ public class GrabAndInteract : MonoBehaviour
 	{
 		if (GetComponent<FixedJoint>())
 		{
+            MessageSystem.EntityThrownEventHandler.Invoke(_heldObject, _heldObject.GetComponent<IGrabbable>());
             var fj = GetComponent<FixedJoint>();
             fj.connectedBody = null;
 			Destroy(fj);
