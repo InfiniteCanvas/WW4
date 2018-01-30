@@ -2,6 +2,7 @@
 using UnityEngine;
 using WW4.Utility;
 
+//[RequireComponent(typeof(Rigidbody))]
 namespace WW4.Entities
 {
     [SelectionBase]

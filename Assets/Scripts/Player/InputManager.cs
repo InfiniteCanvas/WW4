@@ -108,6 +108,9 @@ namespace WW4.Utility
 				case PlayerButtons.Teleport:
 					input = GetTouchDown;
 					break;
+				case PlayerButtons.SpawnBall:
+					input = GetTouchDown;
+					break;
 				default:
 					throw new ArgumentOutOfRangeException("playerButton", playerButton, null);
 			}

@@ -18,6 +18,7 @@ namespace WW4.Utility
 	{
 		Interact,
 		Grab,
-		Teleport
+		Teleport,
+		SpawnBall
 	}
 }

@@ -27,10 +27,10 @@ namespace WW4.EventSystem
             {
                 if (ConditionsFulfilled())
                     OnConditionsFulfilled(this, EventArgs.Empty);
-                foreach (var element in _conditionalNodeElements)
-                {
-                    print($"{element.name} condition fulfilled: {element.GetComponent<IConditionalNodeElement>().ConditionFulfilled()}");
-                }
+                //foreach (var element in _conditionalNodeElements)
+                //{
+                //    print($"{element.name} condition fulfilled: {element.GetComponent<IConditionalNodeElement>().ConditionFulfilled()}");
+                //}
                 yield return null;
             }
         }

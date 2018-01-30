@@ -4,11 +4,14 @@ using WW4.Utility;
 
 public class GrabAndInteract : MonoBehaviour
 {
+    public float ThrowForceMultiplier = 1;
+	public bool IsHoldingObject => _heldObject != null;
+	public float MaxInteractionDistance = 5f;
+
 	private GameObject _collidingObject;
 	private InputManager _controller;
 	private GameObject _heldObject;
 	private LayerMask _interactableMask;
-	private const float MaxInteractionDistance = 3f;
 
 	private void Start()
 	{
@@ -51,6 +54,17 @@ public class GrabAndInteract : MonoBehaviour
         MessageSystem.EntityGrabbedEventHandler.Invoke(_heldObject, _heldObject.GetComponent<IGrabbable>());
 	}
 
+	public void GrabObject(GameObject go)
+	{
+		go.transform.position = transform.position;
+		_heldObject = go;
+		_collidingObject = null;
+		FixedJoint joint = AddFixedJoint();
+		joint.connectedBody = _heldObject.GetComponent<Rigidbody>();
+
+		MessageSystem.EntityGrabbedEventHandler.Invoke(_heldObject, _heldObject.GetComponent<IGrabbable>());
+	}
+
 	private FixedJoint AddFixedJoint()
 	{
 		FixedJoint fx = gameObject.AddComponent<FixedJoint>();
@@ -68,8 +82,8 @@ public class GrabAndInteract : MonoBehaviour
             fj.connectedBody = null;
 			Destroy(fj);
 		    var rb = _heldObject.GetComponent<Rigidbody>();
-			rb.velocity = _controller.GetVelocity();
-			rb.angularVelocity = _controller.GetAngularVelocity();
+			rb.velocity = _controller.GetVelocity() * ThrowForceMultiplier;
+			rb.angularVelocity = _controller.GetAngularVelocity() * ThrowForceMultiplier;
 		}
 		_heldObject = null;
 	}

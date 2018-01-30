@@ -23057,6 +23057,9 @@ GameObject:
   - component: {fileID: 4465948170064362}
   - component: {fileID: 33212167170193946}
   - component: {fileID: 23218944524963180}
+  - component: {fileID: 65277618511937158}
+  - component: {fileID: 114801201357078724}
+  - component: {fileID: 54071935365456020}
   m_Layer: 0
   m_Name: sessel_neu
   m_TagString: Untagged
@@ -67909,6 +67912,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921409118333462}
   m_Mesh: {fileID: 4300000, guid: b9c9fec440ef6be469ac21d821444d90, type: 3}
+--- !u!54 &54071935365456020
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751101522167684}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65005922238719610
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -68845,6 +68863,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 20.000015, y: 240, z: 100.00002}
   m_Center: {x: 0, y: -0.00036621094, z: -0.0078125}
+--- !u!65 &65277618511937158
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751101522167684}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1553398, y: 1.1200004, z: 1.1354275}
+  m_Center: {x: -0.3149632, y: -0.0000000168855, z: -0.25571364}
 --- !u!65 &65279339307570068
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -70566,6 +70596,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114801201357078724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751101522167684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ebe3e04a4c1dcc4b8468795ecc4d9f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114928968896472142
 MonoBehaviour:
   m_ObjectHideFlags: 1
