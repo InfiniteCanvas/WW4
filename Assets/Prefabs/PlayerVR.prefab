@@ -58,9 +58,6 @@ GameObject:
   - component: {fileID: 65295289961339154}
   - component: {fileID: 114106507916197638}
   - component: {fileID: 114146753706196066}
-  - component: {fileID: 114926252771590016}
-  - component: {fileID: 114193480101000776}
-  - component: {fileID: 120450537288405240}
   m_Layer: 0
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -98,7 +95,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1669479989689412
 GameObject:
   m_ObjectHideFlags: 1
@@ -112,6 +109,9 @@ GameObject:
   - component: {fileID: 65297148108432312}
   - component: {fileID: 114903005413439524}
   - component: {fileID: 114050170581069886}
+  - component: {fileID: 114039004262577560}
+  - component: {fileID: 114722361391065002}
+  - component: {fileID: 120713455511612500}
   m_Layer: 0
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -508,6 +508,27 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1923970405904632}
   m_Enabled: 1
+--- !u!114 &114039004262577560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669479989689412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10e8e63de6b1b4c4e9ed8fd8117ac811, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AlphaWalls:
+    serializedVersion: 2
+    m_Bits: 1024
+  CameraHead: {fileID: 4538366109516354}
+  CameraRig: {fileID: 4970833647386766}
+  LaserRenderer: {fileID: 120713455511612500}
+  TeleportMask:
+    serializedVersion: 2
+    m_Bits: 512
+  Reticule: {fileID: 1824880410481922, guid: ed5bf43e38f5cb04195e26b315735bd0, type: 2}
 --- !u!114 &114050170581069886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -519,7 +540,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42add326c7e632a408b852191b1d8d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrowForceMultiplier: 1
+  ThrowForceMultiplier: 2.5
+  MaxInteractionDistance: 5
 --- !u!114 &114106507916197638
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -542,25 +564,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42add326c7e632a408b852191b1d8d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThrowForceMultiplier: 1
---- !u!114 &114193480101000776
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452790007718974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10e8e63de6b1b4c4e9ed8fd8117ac811, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CameraHead: {fileID: 4538366109516354}
-  CameraRig: {fileID: 4970833647386766}
-  LaserRenderer: {fileID: 120450537288405240}
-  TeleportMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  Reticule: {fileID: 100008, guid: e1501bf741aa2794eb61563b12b2eceb, type: 3}
+  ThrowForceMultiplier: 2.5
+  MaxInteractionDistance: 5
 --- !u!114 &114224344616345114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -660,6 +665,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   origin: {fileID: 0}
+--- !u!114 &114722361391065002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1669479989689412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7145d8e357585734288f547ccddcadcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114742991726448346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -684,17 +700,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f57906692db58ef42a09e079ac01f32e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114926252771590016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452790007718974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7145d8e357585734288f547ccddcadcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114980994636061354
@@ -723,12 +728,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: -1
   origin: {fileID: 0}
---- !u!120 &120450537288405240
+--- !u!120 &120713455511612500
 LineRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452790007718974}
+  m_GameObject: {fileID: 1669479989689412}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -760,7 +765,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 1
+    widthMultiplier: 0
     widthCurve:
       serializedVersion: 2
       m_Curve:
