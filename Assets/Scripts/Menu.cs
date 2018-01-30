@@ -35,11 +35,13 @@ public class Menu : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject pauseMenu;
     public GameObject tutorialOverlay;
+    public GameObject tutorialOverlayVR;
     public GameObject inGameOverlay;
     public Image fadingImage;
     public Image background;
 
     private bool paused;
+    private bool vrMode;
     private int currentScene;
 
     private void Start()
@@ -54,8 +56,9 @@ public class Menu : MonoBehaviour
     private void Update()
     {
         currentScene = SceneManager.GetActiveScene().buildIndex;
-        if (currentScene != 0)
+        if (currentScene != 0 && !vrMode)
         {
+            //hide TutorialOverlay or pause the game
             if (Input.GetKeyDown(KeyCode.Escape) && !optionsMenu.activeSelf)
             {
                 if (tutorialOverlay.activeSelf)
@@ -68,11 +71,13 @@ public class Menu : MonoBehaviour
                 }
             }
 
+            //show or hide TutorialOverlay
             if (Input.GetKeyDown(KeyCode.I) && !paused)
             {
                 tutorialOverlay.SetActive(true);
             }
 
+            //show or hide InGameOverlay
             if (tutorialOverlay.activeSelf || paused)
             {
                 inGameOverlay.SetActive(false);
@@ -82,6 +87,7 @@ public class Menu : MonoBehaviour
                 inGameOverlay.SetActive(true);
             }
 
+            //what to do if game is paused
             if (paused)
             {
                 background.gameObject.SetActive(true);
@@ -101,7 +107,12 @@ public class Menu : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
-        }  
+        }
+        else if (currentScene != 0 && vrMode)
+        {
+            //if Input ... close tutorialOverlay
+            //if Input ... pause/unpause Game
+        }
     }
 
     public void DesktopMode()
@@ -112,10 +123,12 @@ public class Menu : MonoBehaviour
 
     public void VRMode()
     {
+        vrMode = true;
         VRSettings.LoadDeviceByName("HTC Vive");
         VRSettings.enabled = true;
-        tutorialOverlay = null;
-        inGameOverlay = null;
+        tutorialOverlay = tutorialOverlayVR;
+        vrMenu.SetActive(false);
+        mainMenu.SetActive(true);
     }
 
     public void NewGame()
@@ -161,6 +174,14 @@ public class Menu : MonoBehaviour
     {
         StartCoroutine(FadingIn(2));
         yield return new WaitUntil(() => operation.isDone);
+        if (vrMode)
+        {
+            GameObject.Find("Player").SetActive(false);
+        }
+        else
+        {
+            GameObject.Find("PlayerVR").SetActive(false);
+        }
         background.sprite = null;
         background.color = new Color(0, 0, 0, 0.5f);
         mainMenu.SetActive(false);
