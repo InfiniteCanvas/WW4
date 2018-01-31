@@ -75,14 +75,17 @@ namespace WW4.Utility
 			switch (playerButton)
 			{
 				case PlayerButtons.Grab:
-					input = GetGripUp;
-					break;
-
-				case PlayerButtons.Interact:
 					input = Controller.GetHairTriggerUp;
 					break;
 
+				case PlayerButtons.Interact:
+					input = GetGripUp;
+					break;
+
 				case PlayerButtons.Teleport:
+					input = GetTouchUp;
+					break;
+				case PlayerButtons.SpawnBall:
 					input = GetTouchUp;
 					break;
 				default:
@@ -98,13 +101,12 @@ namespace WW4.Utility
 			switch (playerButton)
 			{
 				case PlayerButtons.Grab:
-					input = GetGripDown;
-					break;
-
-				case PlayerButtons.Interact:
 					input = Controller.GetHairTriggerDown;
 					break;
 
+				case PlayerButtons.Interact:
+					input = GetGripDown;
+					break;
 				case PlayerButtons.Teleport:
 					input = GetTouchDown;
 					break;

@@ -73,7 +73,7 @@ public class GrabAndInteract : MonoBehaviour
 		return fx;
 	}
 
-	private void ReleaseObject()
+	public void ReleaseObject()
 	{
 		if (GetComponent<FixedJoint>())
 		{

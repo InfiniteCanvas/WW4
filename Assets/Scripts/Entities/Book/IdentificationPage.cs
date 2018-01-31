@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using WW4.TestScripts;
 using WW4.Utility;
+using WW4.EventSystem;
 
 namespace WW4.Entities.Book
 {
@@ -12,6 +13,9 @@ namespace WW4.Entities.Book
 		{
 			Bird bird = heldObject.GetComponent<Bird>();
 			SoundDatabase.SoundDatabaseHandler.IdentifyAudioclip(bird.ClipUrl, BirdName);
+			heldObject.GetComponent<FixedJoint> ();
+			heldObject.SetActive(false);
+			MessageSystem.EntityThrownEventHandler.Invoke (gameObject, gameObject.GetComponent<IGrabbable> ());
 		}
 	}
 }

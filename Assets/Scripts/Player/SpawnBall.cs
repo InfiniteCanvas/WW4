@@ -21,6 +21,9 @@ public class SpawnBall : MonoBehaviour {
 		if (_controller.GetButtonDown (PlayerButtons.SpawnBall))
 		if(!_grabAndInteract.IsHoldingObject)
 			_grabAndInteract.GrabObject (GetBall ());
+
+		if (_controller.GetButtonUp (PlayerButtons.SpawnBall))
+			_grabAndInteract.ReleaseObject();
 	}
 
 	private GameObject GetBall()

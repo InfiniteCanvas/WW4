@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using WW4.Utility;
+using WW4.EventSystem;
 
 //[RequireComponent(typeof(Rigidbody))]
 namespace WW4.Entities
@@ -15,7 +16,7 @@ namespace WW4.Entities
 
         protected virtual void OnJointBreak(float breakForce)
         {
-            print($"Joint of {name} broke at break force of {breakForce}.");
+			MessageSystem.EntityThrownEventHandler.Invoke (gameObject, this);
         }
     }
 }

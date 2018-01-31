@@ -14,7 +14,7 @@ namespace WW4.Entities
 		}
 
 		private void OnTriggerEnter(Collider other)
-		{
+		{			
 			if(other.CompareTag("Player"))
 				SpawnBird();
 		}
