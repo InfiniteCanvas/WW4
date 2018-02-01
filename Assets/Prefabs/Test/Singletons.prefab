@@ -57,7 +57,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dictionary:
   - Name: Bird
-    Prefab: {fileID: 1103576712630668, guid: 2a6396b8c15748646a335aa1234ef408, type: 2}
+    Prefab: {fileID: 100004, guid: ecdad31bbdcee244fa63833ca63b6dd6, type: 3}
   - Name: Ball
     Prefab: {fileID: 1714891374468324, guid: f27b48cfe0d816d46afd191f279b6ee7, type: 2}
 --- !u!114 &114633786002885052

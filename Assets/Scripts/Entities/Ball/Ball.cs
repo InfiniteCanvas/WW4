@@ -26,7 +26,7 @@ namespace WW4.Entities
             else
             {
                 if(_delayedDespawn==null)
-                    _delayedDespawn = StartCoroutine(DelayedDespawn(1f));
+                    _delayedDespawn = StartCoroutine(DelayedDespawn(5f));
             }
         }
 

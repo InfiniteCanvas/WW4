@@ -30,6 +30,10 @@ public class Menu : MonoBehaviour
     #endregion
 
     [HideInInspector] public AsyncOperation operation;
+
+    public GameObject player;
+    public GameObject playerVR;
+
     public GameObject vrMenu;
     public GameObject mainMenu;
     public GameObject optionsMenu;
@@ -49,6 +53,7 @@ public class Menu : MonoBehaviour
         VRSettings.LoadDeviceByName("");
         VRSettings.enabled = false;
         vrMenu.SetActive(true);
+        vrMode = false;
         StartCoroutine(FadingOut(5));
         StartCoroutine(LoadScene(1));
     }
@@ -174,20 +179,20 @@ public class Menu : MonoBehaviour
     {
         StartCoroutine(FadingIn(2));
         yield return new WaitUntil(() => operation.isDone);
-        if (vrMode)
-        {
-            GameObject.Find("Player").SetActive(false);
-        }
-        else
-        {
-            GameObject.Find("PlayerVR").SetActive(false);
-        }
         background.sprite = null;
         background.color = new Color(0, 0, 0, 0.5f);
         mainMenu.SetActive(false);
         tutorialOverlay.SetActive(true);
-        yield return new WaitForSeconds(2);
+        if (vrMode)
+        {
+            Instantiate(playerVR);
+        }
+        else
+        {
+            Instantiate(player);
+        }
         StartCoroutine(FadingOut(2));
+        yield return new WaitForSeconds(2);
     }
 
     IEnumerator FadingIn(float fadeTime)
